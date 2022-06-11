@@ -332,3 +332,68 @@ function REVISE(csp, Xi, Xj) returns true iff we revise the domain of Xi
     revised ← true
  return revised
 ```
+---
+## Logica
+### 1) Si introducano le definizioni di correttezza e completezza di un sistema assiomatico deduttivo, altrimenti detto teoria assiomatica.
+
+Una teoria assiomatica è definita dai suoi assiomi, formule ben formate ritenute vere, e dai suoi criteri di manipolazione sintattica, le regole usate per derivare fbf da altre fbf. Lo scopo di una teoria assiomatica è dimostrare la verità di altre formule dette teoremi. Una teoria assiomatica si dice corretta se i teoremi dimostrati seguono logicamente dagli assiomi della teoria. Si dice inoltre che una teoria è completa se tutte le formule ben formate che ne seguono logicamente possono essere dimostrati come teoremi della teoria.
+
+### 2) Si descriva brevemente in cosa consiste la derivazione SLDNF nella programmazione logica.
+
+### 3) Si enuncino a parole e in modo formale le proprietà di correttezza e completezza per un sistema logico.
+
+---
+## Inferenza e logica dei predicati
+### 1) Si spieghi con un esempio la differenza fra backward e forward chaining e si discuta quando è preferibile l'applicazione di uno e dell'altro con adeguate motivazioni.
+
+--- 
+## Prolog
+
+### 1) Si spieghi brevemente il predicato predefinito Prolog “cut”, le sue caratteristiche e si riporti un esempio che ne mostri l’utilizzo.
+
+### Si spieghi brevemente il predicato predefinito Prolog findall.
+
+Il predicato findall(X, P, L) è un predicato del secondo ordine, ovvero che permette di
+conoscere l’insieme di elementi che soddisfano una data query. findall(X, P, L) è vero se
+L è la lista di istanze di X tali che P sia vera. Se non esistono X che soddisfino P, L è la lista
+vuota.
+
+### Si spieghi brevemente il predicato predefinito Prolog call.
+Il predicato predefinito call(T) tratta il termine T come un atomo e ne richiede la va-
+lutazione all’interprete Prolog. Al momento della valutazione, T deve essere istanziato a un
+termine non numerico, contenente eventualmente delle variabili. Si può vedere l’interprete
+Prolog come un loop che chiama all’infinito read(T), call(T).
+
+### 4) Si spieghi brevemente il predicato bagof e setof in Prolog.
+
+### 5) Si dia la definizione di correttezza e di completezza per la logica deduttiva. Il risolutore del linguaggio Prolog è completo?
+
+### 6) Si descrivano i predicati Prolog di assert e retract e il loro utilizzo, eventualmente con anche con l’aiuto di un esempio.
+
+
+### 8) L’interprete Prolog è un risolutore corretto e completo per la logica a clausole definite? Motivare
+adeguatamente la risposta.
+
+### 9) Dopo avere spiegato brevemente il predicato predefinito Prolog: not(X) si consideri il seguente programma Prolog:
+p(3).
+c(2,Z):- not (p(Z)).
+c(1,3).
+e si indichino le risposte dell’interprete Prolog alle seguenti query:
+?- c(Y,3).
+?- c(Y,4).
+
+### 10) Si descriva il trattamento della negazione in Prolog, si spieghi la differenza rispetto alla negazione classica nonché i limiti e problemi di utilizzo in alcuni casi. Se ne mostri poi l’implementazione nel linguaggio Prolog stesso.
+
+### 11) Si spieghi brevemente in cosa consiste la meta-interpretazione in Prolog specificandone vantaggi esvantaggi. Si mostri il meta-interprete per Prolog puro in Prolog e come modificarlo per tenere inconsiderazione clausole che possono contenere anche sottogoals in or (simbolo “;”). Ad esempio: (a(X);b(Y)) indica l’or dei due sottogoals a(X) e b(Y).
+
+### 12) Si descriva sinteticamente l’unificazione, dove è utilizzata in Prolog, cos’è l’occur-check e cosa implichi il suo non utilizzo in Prolog.
+
+---
+## Pianificazione
+
+### 1) Si introduca il sistema STRIPS per la pianificazione, si spieghi come funziona e se ne evidenzino i limiti.
+
+### 2) Si spieghi cosa si intende per pianificazione classica e per pianificazione reattiva, illustrandone le
+differenze, i vantaggi e gli svantaggi.
+
+### 3) Si spieghi cosa si intende per pianificazione "classica" in AI e le assunzioni semplificative che si fanno al riguardo.
