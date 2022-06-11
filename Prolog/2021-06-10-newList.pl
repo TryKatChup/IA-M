@@ -17,6 +17,7 @@ L1 = []
 
 % Caso base.
 newList([], _, []).
+newList(S, [], S) :- !.
 newList([HS|TS], E, [HS|T]) :- checkMax(E, HS), !, newList(TS, E, T).
 newList([_|TS], E, T) :- newList(TS, E, T).
 
