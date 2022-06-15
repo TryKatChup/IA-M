@@ -453,9 +453,9 @@ otteniamo
 
 ### 6) Si dia la definizione di correttezza e di completezza per la logica deduttiva. Il risolutore del linguaggio Prolog è completo?
 
-La correttezza (soundness) è la proprietà che consente di dimostrare fatti veri.
+Un sistema logico è corretto (soundness) se **non** consente di dimostrare fatti falsi (in base alla semantica del sistema stesso).
 
-La completezza (completeness) è la proprietà che consente di dimostrare _tutti_ i fatti veri.
+Un sistema logico è completo (completeness) se consente di dimostrare tutto ciò che è vero (in base alla semantica del sistema stesso).
 
 Dato un sistema logico, esso risulta corretto se e solo se le regole di inferenza del sistema ammettono solo formule valide. O meglio, se partiamo da premesse valide, le regole di inferenza non consentono di giungere a una conclusione non valida.
 
