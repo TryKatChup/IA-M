@@ -16,10 +16,22 @@ Il file `utilities-lists.pl` contiene tutti i vari predicati che realizzano funz
 
 ### Osservazioni
 
-- ! (cut) utilizzabile per _if mutuamente esclusivi_
+- `!` (cut) utilizzabile per _if mutuamente esclusivi_
 - Lista di liste: va scomposto il problema in un sottopredicato che si occupi delle liste singole
 - `=\=` (not equal) utilizzato per espressioni aritmetiche e numeriche
 - `\=` (not equal) utilizzato per valori numerici e per caratteri
+- `\+`
+- Quando devo effettuare un conteggio e non ho una variabile inizializzata, occorre prima effettuare una chiamata ricorsiva al predicato e poi incrementare il conteggio. L'inizializzazione avviene sempre nel caso base!
+
+Esempio:
+``` prolog
+% Count occurrences
+count([], _, 0).
+count([E|T], E, C) :- count(T, E, C1),
+                      C is C1 + 1.
+count([_|T], E, C) :- count(T, E, C).
+```
+
 - Se ho da restituire una lista contenenti coppie di liste e devo iterare sulla lista risultato, per avere una lista di coppie posso usare `[[H1,H2] | T3]]`
 NB non dimenticarsi `[]` che racchiude la coppia!
 - Se devo verificare l'uguaglianza tra due elementi in testa a due liste, per poi aggiungere l'elemento alla lista risultato basta fare:
@@ -41,3 +53,10 @@ nuovaLista([S|T], S, E) :- S1 is S + 1, nuovaLista(T, S1, E).
 ```prolog
 extract([H1,H2|T]
 ```
+- Se in un caso base si ha un predicato che considera un elemento e una lista vuota, e si vuole restituire una lista con quell'elemento, occorre fare:
+
+```prolog
+prova(N, [], [N]).
+```
+
+In questo esempio si mettono le parentesi quadre, in quanto si vuole distinguere il terzo argomento (una lista) da un elemento (`N`).
