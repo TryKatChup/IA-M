@@ -1,4 +1,5 @@
 /*
+
 9/07/20
 Si scriva un predicato PROLOG:
 newList(P, N, L1)

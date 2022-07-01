@@ -1,5 +1,4 @@
 /*
-
 10-06-21
 
 Si realizzi un predicato Prolog newList(Start, End, L1) che crei una lista di interi L1 contenente i soli valori

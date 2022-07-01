@@ -1,5 +1,6 @@
 /*
 27/01/22
+
 Si realizzi un predicato Prolog lista_coppie(L1, L2, L3) che date due liste L1 e L2 di interi di uguale lunghezza deve
 restituire una nuova lista L3 contenente delle liste di due elementi [el1,el2] che appartengono a L1 o L2, compaiono
 nelle stessa posizione nelle due liste e in cui il primo elemento el1 è minore o uguale del secondo el2. Si tenga conto
