@@ -15,20 +15,15 @@ Il file `utilities-lists.pl` contiene tutti i vari predicati che realizzano funz
 **N.B.** Molti predicati sono già presenti di base in Prolog, ma ne viene mostrata la realizzazione.
 
 ## Ripasso
+### Associatività
+|Prefix| Postfix| Infix |Associativity|
+|--|--|--|--|
+|fx|xf|xfx|none|
+|  |yf|yfx|left|
+|fy|   | xfy |right
 ### Operatori aritmetici 
 
 <table>
-  <tr align="center">
-    <td>
-      <tt>=\=</tt> (not equal)
-    </td>
-    <td>
-      Utilizzato per espressioni aritmetiche e numeriche
-    </td>
-    <td>
-      <bf> xfx <bf>
-    </td>
-  </tr>
  <tr align="center">
     <td>
       <tt>+</tt>
@@ -37,7 +32,7 @@ Il file `utilities-lists.pl` contiene tutti i vari predicati che realizzano funz
       Somma due elementi
     </td>
     <td>
-      <bf> xfy <bf>
+      <bf> fy <bf>
     </td>
    <tr align="center">
     <td>
@@ -47,7 +42,7 @@ Il file `utilities-lists.pl` contiene tutti i vari predicati che realizzano funz
       Sottrae due elementi
     </td>
     <td>
-      <bf> xfy <bf>
+      <bf> fy <bf>
     </td>
   </tr>
    <tr align="center">
@@ -58,7 +53,7 @@ Il file `utilities-lists.pl` contiene tutti i vari predicati che realizzano funz
       Moltiplica due elementi
     </td>
     <td>
-      <bf> xfy <bf>
+      <bf> yfx <bf>
     </td>
   </tr>
  <tr align="center">
@@ -69,7 +64,7 @@ Il file `utilities-lists.pl` contiene tutti i vari predicati che realizzano funz
       Divide due elementi
     </td>
     <td>
-      <bf> xfy <bf>
+      <bf> yfx <bf>
     </td>
    </tr>
   <tr align="center">
@@ -80,7 +75,7 @@ Il file `utilities-lists.pl` contiene tutti i vari predicati che realizzano funz
       Divisione tra interi
     </td>
     <td>
-      <bf> xfy <bf>
+      <bf> yfx <bf>
     </td>
    </tr>
     <tr align="center">
@@ -91,7 +86,7 @@ Il file `utilities-lists.pl` contiene tutti i vari predicati che realizzano funz
       Modulo
     </td>
     <td>
-      <bf> xfy <bf>
+      <bf> yfx <bf>
     </td>
    </tr>
  <tr align="center">
@@ -102,34 +97,244 @@ Il file `utilities-lists.pl` contiene tutti i vari predicati che realizzano funz
       Potenza
     </td>
     <td>
-      <bf> xfy <bf>
+      <bf> xfx <bf>
     </td>
    </tr>
 </table>
 
 ### Predicati aritmetici
-abs(Exp)	absolute value of Exp : i.e. Exp if Exp ≥ 0, –Exp if Exp < 0
-atan(Exp)	arctangent (inverse tangent) of Exp : result is in radians
-cos(Exp)	cosine of the Exp : Exp is in radians
-exp(Exp)	eExp : e is 2.71828182845…
-log(Exp)	natural logarithm of Exp : i.e. logarithm to the base* e
-sin(Exp)	sine of the Exp : Exp is in radians
-sqrt(Exp)	square root of the Exp
-tan(Exp)	tangent of the Exp: Exp is in radians
-sign(Exp)	sign (+1 or –1) of the Exp: sign(–3) = –1 = sign(–3.7)
-float(Exp)	float of the Exp: float(22) = 22.0 - see also float the predicate
-floor(Exp)	largest integer ≤ Exp: floor(1.66) = 1
-truncate(Exp)	remove fractional part of Exp: truncate(–1.5) = –1, truncate(1.5) = 1
-round(Exp)	round Exp to nearest integer: round(1.6) = 2, round(1.3) = 1
-ceiling(Exp)	smallest integer ≥ Exp: ceiling(1.3) = 2      
-  
+<table>
+ <tr align="center">
+    <td>
+      <tt>abs(Exp)</tt>
+    </td>
+    <td>
+      Valore assoluto
+    </td>
+  </tr>
+ <tr align="center">
+    <td>
+      <tt>atan(Exp)</tt>
+    </td>
+    <td>
+      Arcotangente
+    </td>
+   <tr align="center">
+    <td>
+      <tt>cos(Exp)</tt>
+    </td>
+    <td>
+      Coseno
+    </td>
+  </tr>
+   <tr align="center">
+    <td>
+      <tt>exp(Exp)</tt>
+    </td>
+    <td>
+      <tt>e^Exp</tt>
+    </td>
+  </tr>
+ <tr align="center">
+    <td>
+      <tt>log(Exp)</tt>
+    </td>
+    <td>
+      Logaritmo naturale di <tt>Expr</tt>
+    </td>
+   </tr>
+  <tr align="center">
+    <td>
+      <tt>sin(Exp)</tt>
+    </td>
+    <td>
+      Seno
+    </td>
+   </tr>
+    <tr align="center">
+    <td>
+      <tt>sqrt(Exp)</tt>
+    </td>
+    <td>
+      Radice quadrata di <tt> Expr </tt>
+    </td>
+   </tr>
+ <tr align="center">
+    <td>
+      <tt>tan(Exp)</tt>
+    </td>
+    <td>
+      Tangente
+    </td>
+   </tr>
+<tr align="center">
+    <td>
+      <tt>sign(Exp)</tt>
+    </td>
+    <td>
+      Assume valore 1 o -1 in base al segno di <tt>Expr</tt>
+    </td>
+   </tr>
+<tr align="center">
+    <td>
+      <tt>float(Exp)</tt>
+    </td>
+    <td>
+      Trasforma un numero da intero a float
+    </td>
+   </tr>
 
-- `\=` (not equal) utilizzato per valori numerici e per caratteri
-- `\+` 
-- <, =, =.., =@=, \=@=, =:=, =<, ==, =\=, >, >=, @<, @=<, @>, @>=, \=, \==, as, is, >:<, :<
+<tr align="center">
+    <td>
+      <tt>truncate(Exp)</tt>
+    </td>
+    <td>
+      Rimuove la parte decimale di un numero
+    </td>
+   </tr>
 
+   <tr align="center">
+    <td>
+      <tt>floor(Exp)</tt>
+    </td>
+    <td>
+      Arrotonda per difetto
+    </td>
+   </tr>
+<tr align="center">
+    <td>
+      <tt>round(Exp)</tt>
+    </td>
+    <td>
+      Se <tt>>= .5</tt> arrotonda per eccesso, per difetto altrimenti
+    </td>
+    </tr>
+    <tr align="center">
+    <td>
+      <tt>ceiling(Exp)</tt>
+    </td>
+    <td>
+      Arrotonda per eccesso
+    </td>
+</table>
 
+### Operatori relazionali
 
+<table>
+   <tr align="center">
+    <td>
+      <tt><</tt>
+    </td>
+    <td>
+      Minore
+    </td>
+    <td>
+      <bf> xfx <bf>
+    </td>
+  </tr>
+ <tr align="center">
+    <td>
+      <tt>></tt>
+    </td>
+    <td>
+      Maggiore
+    </td>
+    <td>
+      <bf> xfx <bf>
+    </td>
+   </tr>
+  <tr align="center">
+    <td>
+      <tt>=<</tt>
+    </td>
+    <td>
+      Minore o uguale
+    </td>
+    <td>
+      <bf> xfx <bf>
+    </td>
+   </tr>
+    <tr align="center">
+    <td>
+      <tt>>=</tt>
+    </td>
+    <td>
+      Maggiore o uguale
+    </td>
+    <td>
+      <bf> xfy <bf>
+    </td>
+   </tr>
+ <tr align="center">
+    <td>
+      <tt>\+ Expr </tt>
+    </td>
+    <td>
+      Ha successo se <tt>Expr</tt> fallisce. Sostituisce <tt>not</tt>
+    </td>
+    <td>
+      <bf> fy <bf>
+    </td>
+   </tr>
+ <tr align="center">
+    <td>
+      <tt>\==</tt>
+    </td>
+    <td>
+      Disuguaglianza logica
+    </td>
+    <td>
+      <bf> xfx <bf>
+    </td>
+   </tr>
+ <tr align="center">
+    <td>
+      <tt>=:=</tt>
+    </td>
+    <td>
+      Uguaglianza aritmetica ( <tt>3 =:= 3.0</tt> è vera) 
+    </td>
+    <td>
+      <bf> xfx <bf>
+    </td>
+   </tr>
+  <tr align="center">
+    <td>
+      <tt>=\=</tt>
+    </td>
+    <td>
+      Disuguaglianza aritmetica
+    </td>
+    <td>
+      <bf> xfx <bf>
+    </td>
+  </tr>
+<tr align="center">
+    <td>
+      <tt>\=</tt>
+    </td>
+    <td>
+      Non unificazione. Equivalente a <tt>not(X = Y)</tt>
+    </td>
+    <td>
+      <bf> xfx <bf>
+    </td>
+  </tr>
+</table>    
+
+### `is`
+
+```prolog
+<number or variable> is expr
+```
+
+`is` valuta le espressioni aritmetiche alla sua destra, prima di assegnare il risultato dell'espressione ai termini alla sua sinistra.
+
+Esempio:
+``` prolog
+?- X is 2 + 4.
+X = 6
+```
 
 ### Osservazioni
 
