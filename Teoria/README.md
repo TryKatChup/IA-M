@@ -24,7 +24,7 @@ Un sistema Knowledge-Based (KB) è basato fortemente sulla conoscenza del domini
 - una working memory che contiene gli stati correnti;
 - una strategia di controllo per selezionare le regole da applicare agli stati della working memory, e che usa pattern matching per la verifica delle precondizioni delle regole.
 
-La differenza di un sistema KB rispetto a un algoritmo risiede al tipo di conoscenza: nel caso di un sistema KB è importante con _cosa_ si ha a che fare (il dominio del problema), mentre per quel che riguarda un algoritmo è importante _come_ viene utilizzata la conoscenza a disposizione per risolvere un determinato problema.
+La differenza tra un sistema KB rispetto a un algoritmo risiede al tipo di conoscenza: nel caso di un sistema KB è importante con _cosa_ si ha a che fare (il dominio del problema), mentre per quel che riguarda un algoritmo è importante _come_ viene utilizzata la conoscenza a disposizione per risolvere un determinato problema.
 
 ---
 ## Strategie di Ricerca
