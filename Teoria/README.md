@@ -22,7 +22,7 @@ Una variante universale del test di Turing testa anche le abilità percettive de
 Un sistema Knowledge-Based (KB) è basato fortemente sulla conoscenza del dominio dell'applicazione, ed è costituito da tre macrocomponenti:
 - un insieme di operatori (regole);
 - una working memory che contiene gli stati correnti;
-- una strategia di controllo per selezionare le regole da applicare agli stati della working memory, e che usa pattern matching per la verifica delle precondizioni delle regole.
+- una strategia di controllo per selezionare le regole da applicare agli stati della working memory, e che usa _pattern matching_ per la verifica delle precondizioni delle regole.
 
 La differenza tra un sistema KB e un algoritmo risiede al tipo di conoscenza: nel caso di un sistema KB è importante con _cosa_ si ha a che fare (il dominio del problema), mentre per quel che riguarda un algoritmo è importante _come_ viene utilizzata la conoscenza a disposizione per risolvere un determinato problema.
 
@@ -76,7 +76,7 @@ La ricerca iterative deepening consiste nell'eseguire ripetutamente una ricerca 
 La ricerca iterative deepening è ottimale per problemi nei quali tutte le azioni hanno lo stesso costo ed è completa in tutti gli spazi degli stati finiti e aciclici, o nei quali il controllo dei cicli coinvolge l’intero cammino. La complessità temporale è $O(b^d)$ in presenza di una soluzone e $O(b^m)$ in sua assenza. Ogni iterazione genera un nuovo livello ma, a differenza della ricerca in ampiezza, i livelli precedenti
 vengono ricalcolati, risparmiando memoria al costo di maggiore tempo. La ricerca in ampiezza può sembrare molto dispendiosa, poiché diversi stati vengono espansi più volte, ma questo non peggiora sensibilmente i tempi di esecuzione.
 
-La ricerca iterative deepening è da preferire quando lo spazio degli stati non sta nella memoria e la profondità della soluzione non è nota. 
+La ricerca iterative deepening è da preferire quando lo spazio degli stati è troppo vasto per essere memorizzato e la profondità della soluzione non è nota. 
 
 Lo pseudocodice per la ricerca iterative deepening è il seguente:
 
@@ -138,7 +138,7 @@ return solution
 
 La ricerca locale è una classe di algoritmi di ricerca informata basata sull’esplorazione di soluzioni vicine a quella corrente che migliorino la situazione, in termini di una funzione di valutazione $f(.)$. 
 
-Una ricerca locale richiede che sia definita una funzione $F(s)=N(s)$ che definisca $\forall s \in S$, essendo S lo spazio delle soluzioni, una neighborhood $N(s) \subset S$. Questa funzione determina la velocità di convergenza dell’algoritmo e solitamente è definita implicitamente dalle mosse possibili, dato uno stato. 
+Una ricerca locale richiede una funzione $F(s)=N(s)$ che definisca $\forall s \in S$, essendo S lo spazio delle soluzioni, una neighborhood $N(s) \subset S$. Questa funzione determina la velocità di convergenza dell’algoritmo e solitamente è definita implicitamente dalle mosse possibili, dato uno stato. 
 
 La funzione $f(·)$ può non essere globalmente concava, quindi non è detto che la ricerca locale converga a un massimo globale. Se l’algoritmo converge a un massimo locale, più sono larghe le neighborhood e più è probabile che si tratti anche di un massimo globale, ma la complessità computazionale aumenta.
 
@@ -148,8 +148,7 @@ Questo tipo di algoritmo non gestisce un albero di ricerca, ma tiene traccia sol
 
 <img style="float: right;" src="./Hill-climbing1.png" width=400px />
 
-- **Massimi locali**: stati migliori di tutti i vicini, ma peggiori di altri
-stati che non sono nelle vicinanze. Il metodo ci spinge verso il
+- **Massimi locali**: stati migliori di tutti i vicini, ma peggiori di altri stati che non sono nelle vicinanze. Il metodo ci spinge verso il
 massimo locale di bassa qualità e non uscirne mai.
 - **Altopiani**: zone molto piatte nelle quali gli stati vicini hanno tutti lo stesso valore e non è immediato decidere verso quale stato muoversi.
 - **Crinali**: stati con un valore maggiore, ai quali non è possibile arrivare direttamente.
@@ -229,14 +228,10 @@ contraddizioni che potevano essere in anticipo risolte.
 
 Un CSP (Constraints Satisfaction Problem) ha come obiettivo di trovare uno stato del problema che soddisfi determinati vincoli. 
 
-Un CSP può essere approcciato mediante tecniche di consistenza o algoritmi di propagazione. Gli
-algoritmi di propagazione sono metodi di ricerca che tentano di prevenire i fallimenti attraverso
-il pruning (potatura) dell’albero decisionale. Essi utilizzano le relazioni tra le variabili
-del problema, ovvero i vincoli, per ridurre lo spazio di ricerca prima di arrivare al fallimento.
+Un CSP può essere approcciato mediante tecniche di consistenza o algoritmi di propagazione. Gli algoritmi di propagazione sono metodi di ricerca che tentano di prevenire i fallimenti attraverso
+il pruning (potatura) dell’albero decisionale. Essi utilizzano le relazioni tra le variabili del problema, ovvero i vincoli, per ridurre lo spazio di ricerca prima di arrivare al fallimento.
 
-Rispetto allo Standard Backtracking, ad ogni assegnazione di variabile, gli algoritmi
-di propagazione aggiornano e controllano l’insieme di valori ammissibili (domini) di ciascuna
-variabile ancora da istanziare (variabili future).
+Rispetto allo Standard Backtracking, ad ogni assegnazione di variabile, gli algoritmi di propagazione aggiornano e controllano l’insieme di valori ammissibili (domini) di ciascuna variabile ancora da istanziare (variabili future).
 
 - **Forward Checking**: l’assegnazione di un valore ad una variabile ha ripercussioni sull'insieme dei valori disponibili per le variabili ancora libere. In questo modo i vincoli agiscono in avanti (forward) eliminando dai domini delle variabili future i valori incompatibili con la variabile appena istanziata. Se ad un certo punto della computazione il dominio associato ad una variabile risulta vuoto, il meccanismo di Forward Checking fallisce e si esegue backtracking.
   
@@ -352,8 +347,9 @@ La risoluzione SLDNF è alla base della realizzazione della negazione per fallim
 
 ### 3) Si enuncino a parole e in modo formale le proprietà di correttezza e completezza per un sistema logico.
 
-- **correttezza** (soundness): la derivazione produce solo sentenze che sono conseguenza logica.
-- **completezza** (completeness): la derivazione può produrre tutte le conseguenze logiche.
+Un sistema logico si dice **corretto** quando non si possono dimostrare fatti falsi.
+
+Un sistema logico si dice **completo** quando tutti i fatti veri sono dimostrabili
 
 Se T è _corretta_ e _completa_ è garantita l’equivalenza tra l'aspetto sintattico e semantico.
 
