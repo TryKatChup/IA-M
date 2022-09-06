@@ -338,7 +338,7 @@ X = 6
 
 ### Osservazioni generali
 - Lista di liste: va scomposto il problema in un sottopredicato che si occupi delle liste singole
-- Quando devo effettuare un conteggio e non ho una variabile inizializzata, occorre prima effettuare una chiamata ricorsiva al predicato e poi incrementare il conteggio. L'inizializzazione avviene sempre nel caso base!
+- Quando devo effettuare un conteggio e **non ho una variabile inizializzata**, occorre prima effettuare una chiamata ricorsiva al predicato e poi incrementare il conteggio. L'inizializzazione avviene sempre nel caso base!
 
 Esempio:
 ``` prolog
@@ -347,6 +347,15 @@ count([], _, 0).
 count([E|T], E, C) :- count(T, E, C1),
                       C is C1 + 1.
 count([_|T], E, C) :- count(T, E, C).
+```
+
+- Quando invece ho un valore già inizializzato, le operazioni con quel valore vanno fatte prima della chiamata ricorsiva:
+
+```prolog
+% NB inserisco il cut, poiché Prolog esegue i check left most e a sinistra si ha una variabile/indifferenza.
+% Se non venisse inserito il cut, Prolog cercherebbe di fare match anche con la seconda clausola.
+buildList(_, [], 0) :- !.
+buildList(X, [X|T], N) :- N1 is N - 1, buildList(X, T, N1).
 ```
 
 - Se ho da restituire una lista contenenti coppie di liste e devo iterare sulla lista risultato, per avere una lista di coppie posso usare `[[H1,H2] | T3]]`
@@ -390,6 +399,8 @@ Esempio 2 (`member`):
 member([X|_], X) :- !.
 member([_|T], X) :- member(T, X).
 ```
+- Il cut è necessario nel caso base anche qualora il termine più a sinistra **non sia una costante** (`[]`, numero fisso), ma una variabile o una indifferenza (`_`): in questo modo, qualora il caso base sia soddisfatto non si esplora la clausola successiva.
+
 
 #### Caso particolare di inizializzazione
 Si definisca un predicato `stessaSomma(L,V)` che data una lista di liste non vuota L, controlla che le somme di
