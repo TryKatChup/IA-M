@@ -336,11 +336,8 @@ Esempio:
 X = 6
 ```
 
-### Osservazioni
-
-- `!` (cut) utilizzabile per _if mutuamente esclusivi_
+### Osservazioni generali
 - Lista di liste: va scomposto il problema in un sottopredicato che si occupi delle liste singole
-
 - Quando devo effettuare un conteggio e non ho una variabile inizializzata, occorre prima effettuare una chiamata ricorsiva al predicato e poi incrementare il conteggio. L'inizializzazione avviene sempre nel caso base!
 
 Esempio:
@@ -358,18 +355,10 @@ NB non dimenticarsi `[]` che racchiude la coppia!
 ```prolog
 prova([H|T1],[H|T2], [H|T]) :- prova(T1,T2,T).
 ```
-- Il cut può essere necessario anche nella condizione base, per motivi di efficienza, o quando si è raggiunta una condizione prevista dal caso base.
-
-Esempio:
-```prolog
-% Caso base, (cut necessario per evitare di finire nel secondo caso, una volta raggiunta
-% la condizione base, ovvero S > E).
-nuovaLista([], S, E) :- S > E, !.
-nuovaLista([S|T], S, E) :- S1 is S + 1, nuovaLista(T, S1, E).
-```
 - Se una variabile non viene utilizzata, usare il simbolo di indifferenza `_`
 - Negli esercizi con query yes/no, se si vuole ottenere no, ricordarsi del NF (Negation as Failure) + logica positiva di Prolog: se si vuole fallimento, nessuna condizione deve essere vera, quindi non si devono prevedere condizioni alternative.
 - Se si vuole prendere (o anche scartare) il primo e il secondo elemento di una lista in Prolog, basta fare:
+
 ```prolog
 extract([H1,H2|T]
 ```
@@ -380,3 +369,94 @@ prova(N, [], [N]).
 ```
 
 In questo esempio si mettono le parentesi quadre, in quanto si vuole distinguere il terzo argomento (una lista) da un elemento (`N`).
+
+
+#### Cut
+- `!` (cut) utilizzabile per _if mutuamente esclusivi_
+- Il cut può essere necessario anche nella condizione base, per motivi di efficienza, o quando si è raggiunta una condizione prevista dal caso base.
+
+Esempio 1:
+```prolog
+% Caso base, (cut necessario per evitare di finire nel secondo caso, una volta raggiunta
+% la condizione base, ovvero S > E).
+% NB la lista non è inizializzata, pertanto inizialmente sarà in ogni caso vuota!
+nuovaLista([], S, E) :- S > E, !.
+nuovaLista([S|T], S, E) :- S1 is S + 1, nuovaLista(T, S1, E).
+```
+Esempio 2 (`member`):
+```prolog
+% Per motivi di efficienza aggiungo !, dato che appena trovo l'elemento fermo la mia ricerca.
+% Non ha senso che continui la ricerca, se il mio scopo è di trovare che esista almeno un'occorrenza di X.
+member([X|_], X) :- !.
+member([_|T], X) :- member(T, X).
+```
+
+#### Caso particolare di inizializzazione
+Si definisca un predicato `stessaSomma(L,V)` che data una lista di liste non vuota L, controlla che le somme di
+tutti gli elementi per ciascuna delle (sotto-)liste contenute in L siano uguali a V.
+Ad esempio per il goal:
+
+```prolog
+?-stessaSomma([[6,7,2], [1,5,9], [8,3,4]], V).
+Yes V=15
+```
+
+perché la somma di tutti gli elementi di ciascuna sotto-lista è pari a 15. 
+
+Altri esempi:
+
+```prolog
+?-stessaSomma([[6,4,1,2], [1,12], [8,5]], V).
+Yes V=13
+```
+
+```prolog
+?-stessaSomma([[6,7], [1,12], [8,5]], 13).
+Yes
+```
+
+```prolog
+?-stessaSomma([],V).
+No
+```
+
+**Soluzione**
+```prolog
+stessaSomma([H], V) :- !, sum(H,V).
+stessaSomma([H|T], V) :- sum(H,V), stessaSomma(T,V).
+
+sum([], 0).
+sum([H], H) :- !.
+sum([H|T], V) :- sum(T, V1),  V is V1 + H.
+```
+
+**Osservazioni**
+- `sum`: il secondo caso è stato introdotto per motivi di efficienza: si risparmia un' iterazione, quindi se si hanno più liste si risparmiano `N` iterazioni (con `N` sottoliste della lista)
+-`stessaSomma`: caso particolare di inizializzazione. Nell'esercizio si ha:
+
+```prolog
+?-stessaSomma([],V).
+No
+```
+
+Se fosse stato `yes, V=0`, l'esercizio si poteva risolvere in questo modo:
+
+```prolog
+stessaSomma([], 0).
+stessaSomma([H|T], V) :- sum(H,V), stessaSomma(T,V).
+
+sum([], 0).
+sum([H], H) :- !.
+sum([H|T], V) :- sum(T, V1),  V is V1 + H.
+```
+
+Poiché era richiesta inizializzazione nel caso in cui la lista di liste fosse vuota.
+In questo caso, quindi, era necessario _non avere il caso base con la lista vuota_, quindi bisognava ragionare in un altro modo, ovvero: 
+
+> _Non possiamo avere il caso lista vuota, poiché V in quel caso non può essere inizializzato, quindi il risultato della query deve essere false_
+
+$\implies$ La lista non deve mai essere vuota, ma deve contenere almeno un elemento.
+
+```prolog
+stessaSomma([H], V) :- !, sum(H,V).
+```
