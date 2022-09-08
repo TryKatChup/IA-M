@@ -1,6 +1,45 @@
 # Domande di Teoria
-## Introduzione
-### 1) Si introduca brevemente in cosa consiste il Test di Turing.
+- [1. Introduzione](#1-introduzione)
+  - [1.1. Si introduca brevemente in cosa consiste il Test di Turing. (#1)](#11-si-introduca-brevemente-in-cosa-consiste-il-test-di-turing-1)
+- [2. Sistemi Basati sulla Conoscenza (Knowledge Based)](#2-sistemi-basati-sulla-conoscenza-knowledge-based)
+  - [2.1. Si introduca brevemente l’architettura di un sistema basato sulla conoscenza e si sottolinei la sua differenza rispetto al concetto di algoritmo. (#2)](#21-si-introduca-brevemente-larchitettura-di-un-sistema-basato-sulla-conoscenza-e-si-sottolinei-la-sua-differenza-rispetto-al-concetto-di-algoritmo-2)
+- [3. Strategie di Ricerca](#3-strategie-di-ricerca)
+  - [3.1. Si descrivino e si confrontino in termini di complessità spaziale, temporale e ottimalità gli algoritmi di ricerca non informata Depth first, Breadth first e ad approfondimento iterativo, immaginando che il costo degli archi sia sempre uguale a 1. (#3)](#31-si-descrivino-e-si-confrontino-in-termini-di-complessità-spaziale-temporale-e-ottimalità-gli-algoritmi-di-ricerca-non-informata-depth-first-breadth-first-e-ad-approfondimento-iterativo-immaginando-che-il-costo-degli-archi-sia-sempre-uguale-a-1-3)
+  - [3.2. Si introduca brevemente il metodo di ricerca ad approfondimento iterativo sottolineandone le caratteristiche. Se ne descriva poi sinteticamente l’algoritmo in pseudocodice. (#4)](#32-si-introduca-brevemente-il-metodo-di-ricerca-ad-approfondimento-iterativo-sottolineandone-le-caratteristiche-se-ne-descriva-poi-sinteticamente-lalgoritmo-in-pseudocodice-4)
+  - [3.3. Si introduca brevemente il metodo di ricerca a costo uniforme sottolineandone le caratteristiche. Se ne descriva poi sinteticamente l’algoritmo in pseudocodice. (#5)](#33-si-introduca-brevemente-il-metodo-di-ricerca-a-costo-uniforme-sottolineandone-le-caratteristiche-se-ne-descriva-poi-sinteticamente-lalgoritmo-in-pseudocodice-5)
+  - [3.4. Si introduca brevemente il metodo di ricerca locale di Hill-climbing, sottolineandone le caratteristiche. Se ne descriva poi l’algoritmo in pseudo-codice. (#6)](#34-si-introduca-brevemente-il-metodo-di-ricerca-locale-di-hill-climbing-sottolineandone-le-caratteristiche-se-ne-descriva-poi-lalgoritmo-in-pseudo-codice-6)
+  - [3.5. Dare il significato di euristica ammissibile, e enunciare le proprietà che ne derivano per l’algoritmo di ricerca A* che utilizzi una tale euristica. (#7)](#35-dare-il-significato-di-euristica-ammissibile-e-enunciare-le-proprietà-che-ne-derivano-per-lalgoritmo-di-ricerca-a-che-utilizzi-una-tale-euristica-7)
+  - [3.6. Descrivere la ricerca A* e definire sotto quali condizioni tale algoritmo di ricerca trova la soluzione ottima. Perché sono importanti le euristiche ammissibili? E quelle monotone? (#8)](#36-descrivere-la-ricerca-a-e-definire-sotto-quali-condizioni-tale-algoritmo-di-ricerca-trova-la-soluzione-ottima-perché-sono-importanti-le-euristiche-ammissibili-e-quelle-monotone-8)
+- [4. CSP (Constraint Satisfaction Problem)](#4-csp-constraint-satisfaction-problem)
+  - [4.1. Si descrivano le strategie CSP di Generate & Test (GT) e di Standard	Backtracking (SB), discutendone	analogie e differenze. (#9)](#41-si-descrivano-le-strategie-csp-di-generate--test-gt-e-di-standardbacktracking-sb-discutendoneanalogie-e-differenze-9)
+  - [4.2. Si descrivano brevemente le tecniche di propagazione di vincoli (FC, PLA, FLA) applicabili nella fase di ricerca di una soluzione su una modellazione CSP. (#10)](#42-si-descrivano-brevemente-le-tecniche-di-propagazione-di-vincoli-fc-pla-fla-applicabili-nella-fase-di-ricerca-di-una-soluzione-su-una-modellazione-csp-10)
+  - [4.3. Si spieghi cosa è un constraint graph per un problema di CSP e si definiscano i diversi livelli di consistenza da quella di I grado (node consistency) al grado k. (#11)](#43-si-spieghi-cosa-è-un-constraint-graph-per-un-problema-di-csp-e-si-definiscano-i-diversi-livelli-di-consistenza-da-quella-di-i-grado-node-consistency-al-grado-k-11)
+  - [4.4. Si discutano gli algoritmi di consistenza di una rete CSP e in particolare si descriva (in pseudocodice) l’algoritmo di arc-consistenza. (#12)](#44-si-discutano-gli-algoritmi-di-consistenza-di-una-rete-csp-e-in-particolare-si-descriva-in-pseudocodice-lalgoritmo-di-arc-consistenza-12)
+- [5. Logica](#5-logica)
+  - [5.1. Si introducano le definizioni di correttezza e completezza di un sistema assiomatico deduttivo, altrimenti detto teoria assiomatica. (#13)](#51-si-introducano-le-definizioni-di-correttezza-e-completezza-di-un-sistema-assiomatico-deduttivo-altrimenti-detto-teoria-assiomatica-13)
+  - [5.2. Si descriva brevemente in cosa consiste la derivazione SLDNF nella programmazione logica. (#14)](#52-si-descriva-brevemente-in-cosa-consiste-la-derivazione-sldnf-nella-programmazione-logica-14)
+  - [5.3. Si enuncino a parole e in modo formale le proprietà di correttezza e completezza per un sistema logico. (#15)](#53-si-enuncino-a-parole-e-in-modo-formale-le-proprietà-di-correttezza-e-completezza-per-un-sistema-logico-15)
+- [6. Inferenza e logica dei predicati](#6-inferenza-e-logica-dei-predicati)
+  - [6.1. Si spieghi con un esempio la differenza fra backward e forward chaining e si discuta quando è preferibile l'applicazione di uno e dell'altro con adeguate motivazioni. (#16)](#61-si-spieghi-con-un-esempio-la-differenza-fra-backward-e-forward-chaining-e-si-discuta-quando-è-preferibile-lapplicazione-di-uno-e-dellaltro-con-adeguate-motivazioni-16)
+- [7. Prolog](#7-prolog)
+  - [7.1. Si spieghi brevemente il predicato predefinito Prolog `cut`, le sue caratteristiche e si riporti un esempio che ne mostri l’utilizzo. (#17)](#71-si-spieghi-brevemente-il-predicato-predefinito-prolog-cut-le-sue-caratteristiche-e-si-riporti-un-esempio-che-ne-mostri-lutilizzo-17)
+  - [7.2. Si spieghi brevemente il predicato predefinito Prolog `findall`. (#18)](#72-si-spieghi-brevemente-il-predicato-predefinito-prolog-findall-18)
+  - [7.3. Si spieghi brevemente il predicato predefinito Prolog `call`. (#19)](#73-si-spieghi-brevemente-il-predicato-predefinito-prolog-call-19)
+  - [7.4. Si spieghi brevemente il predicato `fail` e i suoi possibili utilizzi. (#20)](#74-si-spieghi-brevemente-il-predicato-fail-e-i-suoi-possibili-utilizzi-20)
+  - [7.5. Si spieghi brevemente il predicato `bagof` e `setof` in Prolog. (#21)](#75-si-spieghi-brevemente-il-predicato-bagof-e-setof-in-prolog-21)
+  - [7.6. Si dia la definizione di correttezza e di completezza per la logica deduttiva. Il risolutore del linguaggio Prolog è corretto e completo? (#22)](#76-si-dia-la-definizione-di-correttezza-e-di-completezza-per-la-logica-deduttiva-il-risolutore-del-linguaggio-prolog-è-corretto-e-completo-22)
+  - [7.7. Si descrivano i predicati Prolog di `assert` e `retract` e il loro utilizzo, eventualmente con anche con l’aiuto di un esempio. (#23)](#77-si-descrivano-i-predicati-prolog-di-assert-e-retract-e-il-loro-utilizzo-eventualmente-con-anche-con-laiuto-di-un-esempio-23)
+  - [7.8. Dopo avere spiegato brevemente il predicato predefinito Prolog: not(X) si consideri il seguente programma Prolog: (#24)](#78-dopo-avere-spiegato-brevemente-il-predicato-predefinito-prolog-notx-si-consideri-il-seguente-programma-prolog-24)
+  - [7.9. Si descriva il trattamento della negazione in Prolog, si spieghi la differenza rispetto alla negazione classica nonché i limiti e problemi di utilizzo in alcuni casi. Se ne mostri poi l’implementazione nel linguaggio Prolog stesso. (#25)](#79-si-descriva-il-trattamento-della-negazione-in-prolog-si-spieghi-la-differenza-rispetto-alla-negazione-classica-nonché-i-limiti-e-problemi-di-utilizzo-in-alcuni-casi-se-ne-mostri-poi-limplementazione-nel-linguaggio-prolog-stesso-25)
+  - [7.10. Si spieghi brevemente in cosa consiste la meta-interpretazione in Prolog specificandone vantaggi e svantaggi. Si mostri il meta-interprete per Prolog puro in Prolog e come modificarlo per tenere in considerazione clausole che possono contenere anche sottogoals in or (simbolo “;”). Ad esempio: (a(X);b(Y)) indica l’or dei due sottogoals a(X) e b(Y). (#26)](#710-si-spieghi-brevemente-in-cosa-consiste-la-meta-interpretazione-in-prolog-specificandone-vantaggi-e-svantaggi-si-mostri-il-meta-interprete-per-prolog-puro-in-prolog-e-come-modificarlo-per-tenere-in-considerazione-clausole-che-possono-contenere-anche-sottogoals-in-or-simbolo--ad-esempio-axby-indica-lor-dei-due-sottogoals-ax-e-by-26)
+  - [7.11. Si descriva sinteticamente l’unificazione, dove è utilizzata in Prolog, cos’è l’occur-check e cosa implichi il suo non utilizzo in Prolog. (#27)](#711-si-descriva-sinteticamente-lunificazione-dove-è-utilizzata-in-prolog-cosè-loccur-check-e-cosa-implichi-il-suo-non-utilizzo-in-prolog-27)
+- [8.Pianificazione](#8pianificazione)
+  - [8.1. Si introduca il sistema STRIPS per la pianificazione, si spieghi come funziona e se ne evidenzino i limiti. (#28)](#81-si-introduca-il-sistema-strips-per-la-pianificazione-si-spieghi-come-funziona-e-se-ne-evidenzino-i-limiti-28)
+  - [8.2. Si descriva brevemente, con un esempio a supporto, in cosa consiste l’anomalia di Sussman. (#29)](#82-si-descriva-brevemente-con-un-esempio-a-supporto-in-cosa-consiste-lanomalia-di-sussman-29)
+  - [8.3. Si spieghi cosa si intende per pianificazione classica e per pianificazione reattiva, illustrandone le differenze, i vantaggi e gli svantaggi. (#30)](#83-si-spieghi-cosa-si-intende-per-pianificazione-classica-e-per-pianificazione-reattiva-illustrandone-le-differenze-i-vantaggi-e-gli-svantaggi-30)
+- [9. Algoritmi genetici (#31)](#9-algoritmi-genetici-31)
+## 1. Introduzione
+### 1.1. Si introduca brevemente in cosa consiste il Test di Turing. (#1)
 
 Ideato da Alan Turing nel 1950, è un criterio che consente di determinare se una macchina sia in grado di esibire un _comportamento intelligente_.
 In questo problema si hanno tre protagonisti: un uomo, una macchina e un interrogante che in una stanza separata deve determinare quale sia l'uomo e quale la macchina.
@@ -16,8 +55,8 @@ La macchina deve avere le seguenti capacità:
 Una variante universale del test di Turing testa anche le abilità percettive della macchina (computer vision), e la sua capacità nel manipolare gli oggetti (robotica).
 
 ---
-## Sistemi Basati sulla Conoscenza (Knowledge Based)
-### 2) Si introduca brevemente l’architettura di un sistema basato sulla conoscenza e si sottolinei la sua differenza rispetto al concetto di algoritmo.
+## 2. Sistemi Basati sulla Conoscenza (Knowledge Based)
+### 2.1. Si introduca brevemente l’architettura di un sistema basato sulla conoscenza e si sottolinei la sua differenza rispetto al concetto di algoritmo. (#2)
 
 Un sistema Knowledge-Based (KB) è basato fortemente sulla conoscenza del dominio dell'applicazione, ed è costituito da tre macrocomponenti:
 - un insieme di operatori (regole);
@@ -27,12 +66,12 @@ Un sistema Knowledge-Based (KB) è basato fortemente sulla conoscenza del domini
 La differenza tra un sistema KB e un algoritmo risiede al tipo di conoscenza: nel caso di un sistema KB è importante con _cosa_ si ha a che fare (il dominio del problema), mentre per quel che riguarda un algoritmo è importante _come_ viene utilizzata la conoscenza a disposizione per risolvere un determinato problema.
 
 ---
-## Strategie di Ricerca
-### 1) Si descrivino e si confrontino in termini di complessità spaziale, temporale e ottimalità gli algoritmi di ricerca non informata Depth first, Breadth first e ad approfondimento iterativo, immaginando che il costo degli archi sia sempre uguale a 1.
+## 3. Strategie di Ricerca
+### 3.1. Si descrivino e si confrontino in termini di complessità spaziale, temporale e ottimalità gli algoritmi di ricerca non informata Depth first, Breadth first e ad approfondimento iterativo, immaginando che il costo degli archi sia sempre uguale a 1. (#3)
 
 Le strategie di ricerca non informate sono:
 - la ricerca in ampiezza (BFS o Breadth First)
-- la ricerca in profondità (DFS o depth First)
+- la ricerca in profondità (DFS o Depth First)
 - la DFS a profondità limitata
 - la ricerca Iterative Deepening
 
@@ -69,9 +108,9 @@ La BFS è ottimale solo se il costo di ogni nodo coincide con la profondità: ne
 - La ricerca **iterative deepening** è una ricerca DFS a profondità limitata eseguita ripetutamente con valori di $l$ crescenti. In questo modo la ricerca diventa completa, e ottima se il costo di ogni nodo coincide con la profondità, quindi nel caso di `costo arco = 1` è ottimale: ad esempio, per profondità 3 avrremo `costo totale percorso = 3`. Il numero totale di espansioni è comunque $O(bd)$.
 
 ---
-### 2) Si introduca brevemente il metodo di ricerca ad approfondimento iterativo sottolineandone le caratteristiche. Se ne descriva poi sinteticamente l’algoritmo in pseudocodice.
+### 3.2. Si introduca brevemente il metodo di ricerca ad approfondimento iterativo sottolineandone le caratteristiche. Se ne descriva poi sinteticamente l’algoritmo in pseudocodice. (#4)
 
-La ricerca iterative deepening consiste nell'eseguire ripetutamente una ricerca in profondità con valori di profondità $l$ che incrementano progressivamente, finché non viene trovata una soluzone. Con $d$ profondità della soluzione a costo minimo, e $m$ profondità massima dello spazio degli stati, la complessità spaziale è $O(bd)$ in presenza di una soluzione o $O(bm)$ in uno spazio degli stati finito senza soluzione. 
+La ricerca iterative deepening consiste nell'eseguire ripetutamente una ricerca in profondità con valori di profondità $l$ che incrementano progressivamente, finché non viene trovata una soluzione. Con $d$ profondità della soluzione a costo minimo, e $m$ profondità massima dello spazio degli stati, la complessità spaziale è $O(bd)$ in presenza di una soluzione o $O(bm)$ in uno spazio degli stati finito senza soluzione. 
 
 La ricerca iterative deepening è ottimale per problemi nei quali tutte le azioni hanno lo stesso costo ed è completa in tutti gli spazi degli stati finiti e aciclici, o nei quali il controllo dei cicli coinvolge l’intero cammino. La complessità temporale è $O(b^d)$ in presenza di una soluzone e $O(b^m)$ in sua assenza. Ogni iterazione genera un nuovo livello ma, a differenza della ricerca in ampiezza, i livelli precedenti
 vengono ricalcolati, risparmiando memoria al costo di maggiore tempo. La ricerca in ampiezza può sembrare molto dispendiosa, poiché diversi stati vengono espansi più volte, ma questo non peggiora sensibilmente i tempi di esecuzione.
@@ -83,12 +122,14 @@ Lo pseudocodice per la ricerca iterative deepening è il seguente:
 ```
 function ITERATIVE-DEEPENING-SEARCH(problem) returns a solution, or failure
     for depth = 0 to ∞ do
-    result ← DEPTH-LIMITED-SEARCH(problem,depth)
-    if result ≠ cutoff then return result
+        result ← DEPTH-LIMITED-SEARCH(problem,depth)
+        if result ≠ cutoff then return result
 
 function DEPTH-LIMITED-SEARCH(problem, l) returns a solution, or failure, or cutoff
-    frontier ← a FIFO queue initially containing one path, for the problem's initial state
+    frontier ← a FIFO queue initially containing one path, for the 
+    problem's initial state
     solution ← failure
+    
     while frontier is not empty do
         parent ← pop(frontier)
         if depth(parent) > l then
@@ -101,7 +142,7 @@ function DEPTH-LIMITED-SEARCH(problem, l) returns a solution, or failure, or cut
  return solution
 ```
 
-### 3) Si introduca brevemente il metodo di ricerca a costo uniforme sottolineandone le caratteristiche. Se ne descriva poi sinteticamente l’algoritmo in pseudocodice.
+### 3.3. Si introduca brevemente il metodo di ricerca a costo uniforme sottolineandone le caratteristiche. Se ne descriva poi sinteticamente l’algoritmo in pseudocodice. (#5)
 
 L’algoritmo di ricerca a costo uniforme svolge una ricerca in ampiezza, nella quale i nodi sono inseriti in una coda di priorità, ordinata in modo tale che venga
 sempre estratto per primo il nodo con la **distanza minore dal nodo di partenza**.
@@ -134,9 +175,9 @@ function UNIFORM-COST-SEARCH(problem) returns a solution, or failure
 return solution
 ```
 
-### 4) Si introduca brevemente il metodo di ricerca locale di Hill-climbing, sottolineandone le caratteristiche. Se ne descriva poi l’algoritmo in pseudo-codice.
+### 3.4. Si introduca brevemente il metodo di ricerca locale di Hill-climbing, sottolineandone le caratteristiche. Se ne descriva poi l’algoritmo in pseudo-codice. (#6)
 
-La ricerca locale è una classe di algoritmi di ricerca informata basata sull’esplorazione di soluzioni vicine a quella corrente che migliorino la situazione, in termini di una funzione di valutazione $f(.)$. 
+La ricerca locale è una classe di algoritmi di ricerca informata basata sull’esplorazione di soluzioni vicine a quella corrente che migliorino la situazione, in termini di una funzione di valutazione $f(·)$. 
 
 Una ricerca locale richiede una funzione $F(s)=N(s)$ che definisca $\forall s \in S$, essendo S lo spazio delle soluzioni, una neighborhood $N(s) \subset S$. Questa funzione determina la velocità di convergenza dell’algoritmo e solitamente è definita implicitamente dalle mosse possibili, dato uno stato. 
 
@@ -165,7 +206,7 @@ function HILL-CLIMBING(problem) returns a state that is a local maximum
 ```
 
 ---
-### 5) Dare il significato di euristica ammissibile, e enunciare le proprietà che ne derivano per l’algoritmo di ricerca A* che utilizzi una tale euristica.
+### 3.5. Dare il significato di euristica ammissibile, e enunciare le proprietà che ne derivano per l’algoritmo di ricerca A* che utilizzi una tale euristica. (#7)
 
 Un’euristica $h(n)$ è ammissibile se, essendo $d(n)$ la vera distanza di un nodo $n$ al nodo di arrivo (goal) e $V$ l’insieme dei nodi di un grafo, si ha
 
@@ -174,7 +215,7 @@ $h(n) \leq d(n) \hskip{1cm} \forall n \in V$
 ovvero l’euristica è ottimistica. Se la ricerca $A^\star$ utilizza un’euristica ammissibile allora è garantito che restituirà la soluzione ottimale.
 
 
-### 6) Descrivere la ricerca A* e definire sotto quali condizioni tale algoritmo di ricerca trova la soluzione ottima.Perché sono importanti le euristiche ammissibili? E quelle monotone? 
+### 3.6. Descrivere la ricerca A* e definire sotto quali condizioni tale algoritmo di ricerca trova la soluzione ottima. Perché sono importanti le euristiche ammissibili? E quelle monotone? (#8) 
 
 La ricerca A* è una ricerca informata di tipo Best-First, che valuta i nodi considerando:
 - $g(n)$, ovvero il costo per raggiungere il nodo $n$ dal nodo di partenza
@@ -209,9 +250,9 @@ Se l'euristica è sia **consistente** che **ammissibile**, allora $A^\star$ è s
 **NB**: Ogni euristica consistente è ammissibile, ma non è vero il viceversa.
 
 ---
-## CSP (Constraint Satisfaction Problem)
+## 4. CSP (Constraint Satisfaction Problem)
 
-### 1) Si descrivano le	strategie CSP di Generate & Test (GT) e di Standard	Backtracking (SB), discutendone	analogie e differenze.
+### 4.1. Si descrivano le strategie CSP di Generate & Test (GT) e di Standard	Backtracking (SB), discutendone	analogie e differenze. (#9)
 
 Le strategie CSP (Constraint Satisfaction Problem) possono essere suddivise in base alla propagazione effettuata in ciascun nodo. Sia GT che SB sono algoritmi senza propagazione.
 
@@ -224,7 +265,7 @@ Anche SB, come GT, prevede un utilizzo a posteriori dei vincoli, con la differen
 contraddizioni che potevano essere in anticipo risolte.
 
 
-### 2) Si descrivano brevemente le tecniche di propagazione di vincoli (FC, PLA, FLA) applicabili nella fase di ricerca di una soluzione su una modellazione CSP.
+### 4.2. Si descrivano brevemente le tecniche di propagazione di vincoli (FC, PLA, FLA) applicabili nella fase di ricerca di una soluzione su una modellazione CSP. (#10)
 
 Un CSP (Constraints Satisfaction Problem) ha come obiettivo di trovare uno stato del problema che soddisfi determinati vincoli. 
 
@@ -245,9 +286,11 @@ Rispetto allo Standard Backtracking, ad ogni assegnazione di variabile, gli algo
 
 Esempio per capire meglio:
 
-È presente il seguente vincolo e a $X0$ è stato assegnato il valore 0:
+È presente il seguente vincolo e a $X0$ è stato appena assegnato il valore 0:
 
 $X0 < X1 < X2 < X3$ con domini per $X1$, $X2$, $X3 :: [1,2,3]$
+
+$X0=0$
 
 PLA, verifica:
 - Per ogni valore in D1 se esiste almeno un valore in D2 e almeno un valore in D3 compatibili (sono eliminati i valori di D1 per i quali non esiste alcun valore compatibile in D2 o in D3)
@@ -261,14 +304,14 @@ $PLA \rightarrow X1 :: [1,2], X2 :: [1,2], X3 :: [1,2,3].$
 
 $FLA \rightarrow X1 :: [1,2], X2 :: [2], X3 :: [3]$
 
-### 3) Si spieghi cosa è un constraint graph per un problema di CSP e si definiscano i diversi livelli di consistenza da quella di I grado (node consistency) al grado k.
+### 4.3. Si spieghi cosa è un constraint graph per un problema di CSP e si definiscano i diversi livelli di consistenza da quella di I grado (node consistency) al grado k. (#11)
 
 A differenza degli algoritmi di propagazione che propagano i vincoli in seguito a istanziazioni delle variabili coinvolte nel problema, le tecniche di consistena riducono il problema originale eliminando dai domini delle variabili i valori che non possono comparire in una soluzione finale.
 
 Per applicare tali tecniche bisogna rappresentare il problema come una rete di
 vincoli, chiamata grafo dei vincoli (constraint graph). I nodi del constraint graph rappresentano le variabili del CSP, mentre gli archi rappresentano i vincoli tra tali variabili. Si riportano di seguito i vari livelli di consistenza esistenti:
 
-- **Livello 1 - Node Consistency:** la consistenza di grado 1 riguarda un solo nodo. Si dice che un nodo è consistente se per ogni valore $Xi \in D_i$ il vincolo unario $P(X_i)$ è soddisfatto.
+- **Livello 1 - Node Consistency:** la consistenza di grado 1 riguarda un solo nodo. Si dice che un nodo è consistente se per ogni valore $x_i \in D_i$ il vincolo unario $P(i)$ è soddisfatto.
 - **Livello 2 - Arc Consistency:** la consistenza di grado 2 si ottiene da un grafo node-consistent e riguarda 2 nodi del grafo. In particolare, questa consistenza verifica se un arco $A(i, j)$ che collega due nodi $X_i$, $X_j$ è consistente. Un arco $A(i, j)$ è consistente se per
 ogni valore $x \in D_i$, esiste almeno un valore $y \in D_j$ tale che il vincolo $P(i, j)$ tra $i$ e $j$ sia soddisfatto.
 - **Livello 3 - Path Consistency:** la consistenza di grado 3 si ottiene partendo da un grafo
@@ -280,11 +323,15 @@ In generale, se un grafo contenente $n$ variabili è k-consistente con $k < n$, 
 trovare una soluzione è necessaria una ricerca nello spazio restante.
 
 
-### 4) Si discutano gli algoritmi di consistenza di una rete CSP e in particolare si descriva (in pseudocodice) l’algoritmo di arc-consistenza.
+### 4.4. Si discutano gli algoritmi di consistenza di una rete CSP e in particolare si descriva (in pseudocodice) l’algoritmo di arc-consistenza. (#12)
 
 Un CSP è definito come un insieme di variabili $x_k$ e domini $D_k$ tali che:
 
-$x_k \in D_k \forall k \in 1..n$ e di vincoli $c_k (x_{i1}, ..., x_{ij}) \in D_{i1} \times ... \times D_{ij}$
+$x_k \in D_k \forall k \in 1..n$ 
+
+e di vincoli 
+
+$c_k (x_{i1}, ..., x_{ij}) \in D_{i1} \times ... \times D_{ij}$
 
 su $j$. 
 
@@ -320,7 +367,7 @@ function AC-3(csp) returns false if an inconsistency is found and true otherwise
 
 ```
 ```
-function REVISE(csp, Xi, Xj) returns true iff we revise the domain of Xi
+function REVISE(csp, Xi, Xj) returns true if we revise the domain of Xi
  revised ← false
  for each x in Di do
    if no value y in Dj allows (x, y) to satisfy the constraint between Xi and Xj then
@@ -328,16 +375,19 @@ function REVISE(csp, Xi, Xj) returns true iff we revise the domain of Xi
     revised ← true
  return revised
 ```
+
 ---
-## Logica
-### 1) Si introducano le definizioni di correttezza e completezza di un sistema assiomatico deduttivo, altrimenti detto teoria assiomatica.
+
+## 5. Logica
+
+### 5.1. Si introducano le definizioni di correttezza e completezza di un sistema assiomatico deduttivo, altrimenti detto teoria assiomatica. (#13)
 
 Una teoria assiomatica è definita dai suoi assiomi, formule ben formate (fbf) ritenute vere, e dai suoi criteri di manipolazione sintattica, ovvero le regole usate per derivare fbf da altre fbf. Lo scopo di una teoria assiomatica è _dimostrare la verità_ dei _teoremi_.
 
 Una teoria assiomatica si dice **corretta** se i teoremi dimostrati seguono logicamente dagli assiomi della teoria. Si dice inoltre che una teoria è **completa** se tutte le fbf che ne seguono logicamente possono essere dimostrati come teoremi della teoria.
 
 
-### 2) Si descriva brevemente in cosa consiste la derivazione SLDNF nella programmazione logica.
+### 5.2. Si descriva brevemente in cosa consiste la derivazione SLDNF nella programmazione logica. (#14)
 
 Per risolvere goal generali che possono contenere letterali negativi si introduce un'estensione della risoluzione SLD, nota come risoluzione SLDNF. Combina la risoluzione SLD con la negazione per fallimento (NF).
 
@@ -345,17 +395,17 @@ La selezione di letterali negativi solamente "ground" (ovvero che non contengono
 
 La risoluzione SLDNF è alla base della realizzazione della negazione per fallimento nei sistemi Prolog. Per dimostrare $\tilde A$, dove $A$ è un atomo, l'interprete del linguaggio cerca di costruire una dimostrazione per $A$. Se la dimostrazione ha successo, allora la dimostrazione di $\tilde A$ fallisce, mentre se la dimostrazione per $A$ fallisce finitamente $\tilde A$ si considera dimostrato con successo.
 
-### 3) Si enuncino a parole e in modo formale le proprietà di correttezza e completezza per un sistema logico.
+### 5.3. Si enuncino a parole e in modo formale le proprietà di correttezza e completezza per un sistema logico. (#15)
 
 Un sistema logico si dice **corretto** quando non si possono dimostrare fatti falsi.
 
-Un sistema logico si dice **completo** quando tutti i fatti veri sono dimostrabili
+Un sistema logico si dice **completo** quando tutti i fatti veri sono dimostrabili.
 
 Se T è _corretta_ e _completa_ è garantita l’equivalenza tra l'aspetto sintattico e semantico.
 
 ---
-## Inferenza e logica dei predicati
-### 1) Si spieghi con un esempio la differenza fra backward e forward chaining e si discuta quando è preferibile l'applicazione di uno e dell'altro con adeguate motivazioni.
+## 6. Inferenza e logica dei predicati
+### 6.1. Si spieghi con un esempio la differenza fra backward e forward chaining e si discuta quando è preferibile l'applicazione di uno e dell'altro con adeguate motivazioni. (#16)
 
 **Forward e backward chaining** sono strategie utilizzate dal motore di inferenza per effettuare deduzioni.
 
@@ -374,9 +424,9 @@ Le differenze possono essere riassunte nella seguente tabella.
 
 
 --- 
-## Prolog
+## 7. Prolog
 
-### 1) Si spieghi brevemente il predicato predefinito Prolog `cut`, le sue caratteristiche e si riporti un esempio che ne mostri l’utilizzo.
+### 7.1. Si spieghi brevemente il predicato predefinito Prolog `cut`, le sue caratteristiche e si riporti un esempio che ne mostri l’utilizzo. (#17)
 
 Dato un albero SLD contenente le valutazioni delle query eseguite da Prolog, il predicato predefinito `cut` effettua la potatura dell'albero, eliminando alcuni rami non desiderati dallo stack di backtracking. In questo modo si rendono definitive alcune scelte effettuate durante la valutazione di un determinato goal, evitando che vengano trovate soluzioni extra. 
 
@@ -397,11 +447,11 @@ Un esempio di esecuzione è il seguente:
 
 Uno svantaggio del predicato `cut` è la perdita di dichiaratività.
 
-### 2) Si spieghi brevemente il predicato predefinito Prolog `findall`.
+### 7.2. Si spieghi brevemente il predicato predefinito Prolog `findall`. (#18)
 
-Il predicato `findall(X, P, L)` è un predicato del secondo ordine che permette di conoscere l’insieme di elementi che soddisfano un dato goal `P`. `findall(X, P, L)` risulta vero se `L` è la lista di istanze di `X` tali che soddisfino il goal `P`. Se non esistono `X` che soddisfino `P`, `L` è la lista vuota.
+Il predicato `findall(X, P, L)` è un predicato del secondo ordine che permette di conoscere l’insieme di elementi che soddisfano un dato goal `P`. `findall(X, P, L)` risulta vero se `L` è la lista di istanze di `X` tali che soddisfino il goal `P`. Se non esistono `X` che soddisfino `P`, `L` è la lista vuota (a differenza di `bagof` che fallisce).
 
-### 3) Si spieghi brevemente il predicato predefinito Prolog `call`.
+### 7.3. Si spieghi brevemente il predicato predefinito Prolog `call`. (#19)
 Il predicato predefinito `call(T)` tratta il termine `T` come un atomo predicativo e ne richiede la valutazione all’interprete Prolog. Al momento della valutazione, `T` deve essere istanziato a un termine non numerico, contenente eventualmente delle variabili.
 
 Si può vedere l’interprete Prolog come un loop che chiama all’infinito `read(T), call(T)`.
@@ -409,14 +459,14 @@ Il predicato `call` viene considerato un meta-predicato, in quanto
 - la sua valutazione interferisce direttamente con l'interprete di Prolog, con la stessa istanza di valutazione;
 - altera direttamente il programma.
 
-### 4) Si spieghi brevemente il predicato `fail` e i suoi possibili utilizzi
+### 7.4. Si spieghi brevemente il predicato `fail` e i suoi possibili utilizzi. (#20)
 `fail` è un predicato senza argomenti la cui valutazione fallisce sempre: in questo modo forza l'interprete ad esplorare altre alternative e attivando il backtracking.
 Con `fail` si può:
 - ottenere una forma di iterazione sui dati
 - implementare Negation as Failure (NF)
 - implementare una implicazione logica
 
-### 5) Si spieghi brevemente il predicato `bagof` e `setof` in Prolog.
+### 7.5. Si spieghi brevemente il predicato `bagof` e `setof` in Prolog. (#21)
 
 `setof(X,P,S)` e `bagof(X,P,L)` forniscono in `S` e in `L` rispettivamente l’**insieme** e la **lista** delle istanze `X` che soddisfano il goal `P`. 
 
@@ -433,7 +483,7 @@ p(1).
 
 Invocando 
 
-`setof(X, è(X), S)` 
+`setof(X, P(X), S)` 
 
 otteniamo 
 
@@ -447,7 +497,9 @@ otteniamo
 
 `YES,L=[0,1,2,1]`. In entrambi i casi otteniamo anche `X = X`: alla variabile `X` non verrà assegnato alcun valore.
 
-### 6) Si dia la definizione di correttezza e di completezza per la logica deduttiva. Il risolutore del linguaggio Prolog è completo?
+Inoltre `bagof` e `findall` funzionano allo stesso identico modo, con la differenza che, in caso di mancato soddisfacimento del goal da parte di tutte le istanze `findall` restituisce una lista vuota, mentre `bagof` fallisce.
+
+### 7.6. Si dia la definizione di correttezza e di completezza per la logica deduttiva. Il risolutore del linguaggio Prolog è corretto e completo? (#22)
 
 Un sistema logico è corretto (soundness) se **non** consente di dimostrare fatti falsi (in base alla semantica del sistema stesso).
 
@@ -455,14 +507,20 @@ Un sistema logico è completo (completeness) se consente di dimostrare tutto ci�
 
 Dato un sistema logico, esso risulta corretto se e solo se le regole di inferenza del sistema ammettono solo formule valide. O meglio, se partiamo da premesse valide, le regole di inferenza non consentono di giungere a una conclusione non valida.
 
-Un sistema logico risulta completo se e solo se tutte le formule valide possono essere dedotte dagli assiomi e dalle regole di inferenza. Non esistono formule invalide che non possano essere dimostrate.
+Un sistema logico risulta **completo** se e solo se tutte le formule valide possono essere dedotte dagli assiomi e dalle regole di inferenza. Non esistono formule invalide che non possano essere dimostrate.
 
-Prolog non è un sistema completo, in quanto l'ordine delle clausole del programma può influenzare la sua terminazione e il suo risultato. Non sempre trova una derivazione, anche se la derivazione esiste. 
+Prolog _non è un sistema completo_, in quanto l'ordine delle clausole del programma può influenzare la sua terminazione e il suo risultato (adottando un approccio di tipo Depth First). Non sempre trova una derivazione, anche se la derivazione esiste. 
+
+Prolog inoltre non è un sistema corretto, poiché non utilizza occur-check: data una variabile V e una struttura S, con S che contiene V, l'unificazione viene ugualemente effettuata da parte dell'interprete di Prolog (ad esempio l'unificazione di `r(X, f(X))` con `r(U U)`), dando origine a fatti falsi dimostrati come se fossero veri, o cicli infiniti.
+
+**NB** per _dimostrazione di un fatto falso_ si intende che esiste una qualsiasi dimostrazione per un fatto, anche se non dovrebbe esistere (ovvero, per la Closed World Assumption + Negation as Failure un fatto è falso se non esiste dimostrazione che sia vero).
 
 
-### 7) Si descrivano i predicati Prolog di `assert` e `retract` e il loro utilizzo, eventualmente con anche con l’aiuto di un esempio.
+### 7.7. Si descrivano i predicati Prolog di `assert` e `retract` e il loro utilizzo, eventualmente con anche con l’aiuto di un esempio. (#23)
 
-Il predicato `assert(X)` aggiunge un nuovo fatto o clausola `X` al database. 
+Il predicato `assert(X)` aggiunge un nuovo fatto o clausola `X` al database. In particolar modo:
+- `asserta(X)` aggiunge la clausola `X` a inizio database
+- `assertz(X)` aggiunge in fondo al database la clausola `X`
 
 `X` viene aggiunto al database in una posizione non specificata.
 
@@ -475,6 +533,7 @@ assert(good(skywalker, luke)).
 assert(good(solo, han)).
 assert(bad(vader, darth)).
 ```
+**NB** `dynamic` consente di utilizzare i predicati dinamici, in modo da potere aggiungere, modificare o cancellare nuovi fatti e regole.
 
 Eseguendo questa query otteniamo:
 ```
@@ -504,7 +563,14 @@ false
 
 **NB** Al momento della valutazione, `X` deve essere istanziato a un termine che denota una clausola. 
 
-### 8) Dopo avere spiegato brevemente il predicato predefinito Prolog: not(X) si consideri il seguente programma Prolog:
+Gli svantaggi di `assert` e `rectract` sono i seguenti:
+- Perdita di dichiaratività dei programmi Prolog.
+- L'ordine dei letterali è rilevante nel caso in cui uno dei due letterali sia il predicato `assert`, pertanto ordine diverso può generare risultati diversi:
+  - `?- assert(p(a)), p(a).` ha successo
+  - `?- p(a), assert(p(a)).` fallisce 
+- Quantificazione delle variabili: le variabili in una clausola nel database sono quantificate universalmente, mentre le variabili in una query sono quantificate esistenzialmente.
+
+### 7.8. Dopo avere spiegato brevemente il predicato predefinito Prolog: not(X) si consideri il seguente programma Prolog: (#24)
 
 ```prolog
 p(3).
@@ -529,7 +595,7 @@ Come risposta si ha
 Y = 1.
 Y = 2 .
 ```
-### 9) Si descriva il trattamento della negazione in Prolog, si spieghi la differenza rispetto alla negazione classica nonché i limiti e problemi di utilizzo in alcuni casi. Se ne mostri poi l’implementazione nel linguaggio Prolog stesso.
+### 7.9. Si descriva il trattamento della negazione in Prolog, si spieghi la differenza rispetto alla negazione classica nonché i limiti e problemi di utilizzo in alcuni casi. Se ne mostri poi l’implementazione nel linguaggio Prolog stesso. (#25)
 
 La negazione classica, che è anche quella utilizzata nelle basi di dati, è basata sulla CWA (Closed World Assumption) in cui se un atomo “ground” $A$ non è conseguenza logica di un programma P, allora si può derivare $\sim A$. Tuttavia, non esiste alcun algoritmo in grado di stabilire in un tempo finito se $A$ non è conseguenza logica di $P$ a causa dell’**indecidibiltà**(semi-decidibilità) della logica del primo ordine. 
 
@@ -632,9 +698,9 @@ not(A).
 ```
 Si noti l’utilizzo del metapredicato `fail` che forza il fallimento di una dimostrazione dell’interprete prolog.
 
-### 10) Si spieghi brevemente in cosa consiste la meta-interpretazione in Prolog specificandone vantaggi e svantaggi. Si mostri il meta-interprete per Prolog puro in Prolog e come modificarlo per tenere in considerazione clausole che possono contenere anche sottogoals in or (simbolo “;”). Ad esempio: (a(X);b(Y)) indica l’or dei due sottogoals a(X) e b(Y).
+### 7.10. Si spieghi brevemente in cosa consiste la meta-interpretazione in Prolog specificandone vantaggi e svantaggi. Si mostri il meta-interprete per Prolog puro in Prolog e come modificarlo per tenere in considerazione clausole che possono contenere anche sottogoals in or (simbolo “;”). Ad esempio: (a(X);b(Y)) indica l’or dei due sottogoals a(X) e b(Y). (#26)
 
-I meta interpreti consentono a realizzazione di meta-programmi, ovvero programmi che operano su altri programmi.
+I meta interpreti consentono la realizzazione di meta-programmi, ovvero programmi che operano su altri programmi.
 
 In prolog, un meta-interprete per un linguaggio L è per definizione un interprete per L scritto in Prolog.
 
@@ -647,20 +713,27 @@ In prolog, un meta-interprete per un linguaggio L è per definizione un interpre
 - approccio limitato all'uso di regole di produzione con strategia di inferenza backward;
 - scarsa leggibilità e modificabilità dei programmi.
 
+Il meta-interprete per Prolog puro è definito nel seguente modo:
+
+```prolog
+solveVan(true) :- !.
+solveVan((A, B)) :- !, solveVan(A), solveVan(B).
+solveVan(A) :- clause(A, B), solveVan(B).
+```
+
 Una modalità per implementare un meta-interprete che dimostri l'OR dei sub-goal è la seguente:
 
-```
-/* Vanilla Meta-Interpreter */
+```prolog
 solveVan(true) :- !.
 solveVan((A, _)) :- !, solveVan(A).
 solveVan((_, B)) :- !, solveVan(B).
-solveVan(X) :- clause(X, Body), solveVan(Body).
+solveVan(A) :- clause(A, B), solveVan(B).
 ```
 In particolare:
 - la seconda riga risolve `A`;
 - la terza riga risolve `B`.
 
-### 11) Si descriva sinteticamente l’unificazione, dove è utilizzata in Prolog, cos’è l’occur-check e cosa implichi il suo non utilizzo in Prolog.
+### 7.11. Si descriva sinteticamente l’unificazione, dove è utilizzata in Prolog, cos’è l’occur-check e cosa implichi il suo non utilizzo in Prolog. (#27)
 
 **Unificazione**: procedimento di manipolazione formale utilizzato per stabilire quando due espressioni possono coincidere procedendo a opportune sostituzioni.
 L'unificazione (combinata con le varie notazioni per le liste) è un potente meccanismo per l'accesso alle liste.
@@ -684,30 +757,33 @@ Necessario per assicurare la terminazione dell’algoritmo e la correttezza del 
 
 I due termini `X` e `f(X)` non sono unificabili: non esiste una sostituzione per `X` che renda uguali i due termini.
 
-Prolog non utilizza l’occur-check, risulta quindi non corretto. La mancata implementazione è dovuta al costo elevato e alla possibilità di avere loop infiniti e strutture dati circolari. In prolog il goal $X = f(X)$ ha successo.
+Prolog non utilizza l’occur-check, risulta quindi non corretto. Questo porta ad avere fatti falsi dimostrati come veri o cicli infiniti (ad prolog l'unificazione $X = f(X)$ non termina mai). La mancata implementazione è dovuta al costo elevato e alla possibilità di avere loop infiniti e strutture dati circolari. 
+
+**NB** per _dimostrazione di un fatto falso_ si intende che esiste una qualsiasi dimostrazione per un fatto, anche se non dovrebbe esistere (ovvero, per la Closed World Assumption + Negation as Failure un fatto è falso se non esiste dimostrazione che sia vero).
+
 
 ---
-## Pianificazione
+## 8.Pianificazione
 
-### 1) Si introduca il sistema STRIPS per la pianificazione, si spieghi come funziona e se ne evidenzino i limiti.
+### 8.1. Si introduca il sistema STRIPS per la pianificazione, si spieghi come funziona e se ne evidenzino i limiti. (#28)
 
 Lo STanford Research Institute Problem Solving è un pianificatore automatico sviluppato
 nel 1971 che permette di rappresentare azioni con sintassi molto semplice ed efficiente. 
 
-Esso campiona delle proprietà che valgono in un determinato istante/stato della realtà nei cosiddetti “fluent”; un esempio di fluent è `ontable(c,s)`.
+Esso campiona delle proprietà che valgono in un determinato istante/stato della realtà nei cosiddetti _fluent_; un esempio di fluent è `ontable(c,s)`.
 
 Il linguaggio di STRIPS permette di:
 - Rappresentare lo stato attraverso un insieme di fluent che valgono nello stato. Ad
-esempio: on(b,a), clear(b), clear(c), ontable(c), etc.
+esempio: `on(b,a)`, `clear(b)`, `clear(c)`, `ontable(c)`, etc.
 
 - Rappresentare il goal, similmente allo stato, attraverso un insieme di fluent. Si possono avere variabili, ad esempio `on(X, a)`
   
-  - Rappresentare le azioni/regole mediante tre liste:
-  - PRECONDIZIONI: fluent che devono essere veri per applicare l’azione
-  - DELETE: fluent che diventano falsi come risultato dell’azione
-  - ADD: fluent che diventano veri come risultato dell’azione
+- Rappresentare le azioni/regole mediante tre liste:
+  - **PRECONDIZIONI**: fluent che devono essere veri per applicare l’azione
+  - **DELETE**: fluent che diventano falsi come risultato dell’azione
+  - **ADD**: fluent che diventano veri come risultato dell’azione
    
-Il pianificatore agisce secondo un algoritmo di ricerca nello spazio degli stati che funge planner lineare. Esso è basato su una ricerca backward e assume che lo stato iniziale sia completamente noto (Closed World Assumption). 
+Il pianificatore agisce secondo un algoritmo di ricerca nello spazio degli stati che funge da planner lineare. Esso è basato su una ricerca backward e assume che lo stato iniziale sia completamente noto (Closed World Assumption). 
 
 Come è possibile notare, fa uso di due strutture dati, uno stack di goal e una descrizione S dello stato corrente.
 
@@ -726,7 +802,7 @@ soddisfatta (problema dell’interazione tra goal) si reinserisce nella pila e s
 
 I problemi che tipicamente si hanno con con questo algoritmo risiedono nel fatto che il grafo di ricerca è molto vasto (soluzione: strategie euristiche) e nell’interazione tra i goal: quando due o più goal interagiscono ci possono essere problemi di interazione tra le soluzioni (vedere anomalia di Sussman).
 
-### 2) Si descriva brevemente, con un esempio a supporto, in cosa consiste l’anomalia di Sussman.
+### 8.2. Si descriva brevemente, con un esempio a supporto, in cosa consiste l’anomalia di Sussman. (#29)
 L’anomalia di Sussman è un problema che sorge nella pianificazione lineare quando un goal
 viene diviso in più sottogoal, da soddisfare uno dopo l’altro. Questo può portare a definire più sottogoal che interagiscono in modo tale che soddisfare un goal richieda di smettere di soddisfarne un altro. L’anomalia evidenzia la non completezza della pianificazione lineare e la necessità di offrire _interleaving_, ovvero la possibilità di compiere azioni pertinenti a più sottogoal diversi, per poter rendere completo un algoritmo di questo tipo.
 
@@ -744,7 +820,7 @@ A questo punto, soddisfare l’altro sottogoal richiede di disfare quanto appena
 
 È possibile arrivare al goal finale, ma non in maniera efficiente, il che mette in mostra una debolezza della pianificazione lineare.
 
-### 2) Si spieghi cosa si intende per pianificazione classica e per pianificazione reattiva, illustrandone le differenze, i vantaggi e gli svantaggi.
+### 8.3. Si spieghi cosa si intende per pianificazione classica e per pianificazione reattiva, illustrandone le differenze, i vantaggi e gli svantaggi. (#30)
 
 La pianificazione è la definizione di un piano, ovvero un insieme totalmente o parzialmente ordinato dai azioni che portino lo stato di un sistema da uno stato di partenza a un goal desiderato.
 
@@ -753,3 +829,19 @@ La pianificazione **classica**, o offline, prevede la definizione di un piano le
 La pianificazione classica presume che solamente le azioni parte del piano modifichino lo stato di un sistema, che i cambiamenti di stato siano totalmente deterministici, che lo stato iniziale sia totalmente noto a priori e che le azioni vengano eseguite in modo atomico. Queste assunzioni sono molto forti e raramente verificate in sistemi reali.
 
 Per questo motivo si fa strada la pianificazione **reattiva**, o online, che considera il sistema come dinamico e non deterministico e può alterare il piano anche durante l’esecuzione, dato che continua a osservare lo stato del sistema anche in questa fase.
+
+## 9. Algoritmi genetici (#31)
+
+Gli algoritmi genetici sono algoritmi di ricerca locale, che consentono di migliorare una soluzione $s \in S$, utilizzando una funzione di valutazione detta _fitness_.
+
+Un algoritmo genetico agisce nel seguente modo:
+1) Viene generata una prima popolazione di soluzioni (dette cromosomi)
+2) Si applica la funzione di fitness sulla popolazione
+3) Si sceglono i valori più alti in base ai risultato restituito dalla funzione di fitness per ciascun figlio
+4) Si generano nuove soluzioni ibride tramite:
+   - crossover, che consiste nel combinare due cromosomi, in modo da ottenere una soluzione figlia. 
+   - random mutation: si applica un delta che corrisponde alla mutazione su una soluzione s
+   Come risultato si avrà una nuova popolazione composta da soluzioni ottenute tramite crossover
+
+5) Si scelgono i valori più alti risultanti dalla applicazione della funzione di fitness sulle soluzioni ottenute al punto 4)
+6) Si continua con il punto 4) e 5) fino a quando si ottiene una soluzione che soddisfi dei requisiti minimi, o in base al numero di generazioni, o in base alle risorse allocate.
