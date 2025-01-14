@@ -1,0 +1,241 @@
+{
+  "main": {
+    "id": "81ee2f111ea30528",
+    "type": "split",
+    "children": [
+      {
+        "id": "72ddd8cf4af3b95f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c9d7511c4dd6ce5b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Teoria/README.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
+            }
+          },
+          {
+            "id": "a06e70c8bef8c470",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Metodi di risoluzione degli esercizi/Constraints Satisfaction Problem.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Constraints Satisfaction Problem"
+            }
+          }
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "37f451cefe095495",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "094458b80e25052e",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Prolog/README.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "README"
+            }
+          },
+          {
+            "id": "fdb87169bb61cb42",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Esami/2022-09-09 - soluzione.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "2022-09-09 - soluzione"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "eaebbe00e1ac689a",
+    "type": "split",
+    "children": [
+      {
+        "id": "bba623f8b2810ee1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8a46d4a437619c99",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "f10c73fe74a80607",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "49357aeef5ca205c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "4160361c9ecfbd1a",
+    "type": "split",
+    "children": [
+      {
+        "id": "6d3f18cb1a65a39f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e9adee0fd7d765d1",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Teoria/RiassuntiAI.pdf",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for RiassuntiAI"
+            }
+          },
+          {
+            "id": "6e28ac190dd3cf6f",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Teoria/RiassuntiAI.pdf",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from RiassuntiAI"
+            }
+          },
+          {
+            "id": "a41ea14bc850d8b1",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "8ef337e0c320299b",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Teoria/RiassuntiAI.pdf"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of RiassuntiAI"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "a06e70c8bef8c470",
+  "lastOpenFiles": [
+    "Esami/2022-09-09 - soluzione.pdf",
+    "Esami/2021-07-09 - soluzione.pdf",
+    "Esami/2021-09-07 - soluzione.pdf",
+    "Esami/2022-01-11 - soluzione.pdf",
+    "Esami/2022-01-27 - soluzione.pdf",
+    "Esami/2022-02-17 - soluzione.pdf",
+    "Esami/2022-06-16 - soluzione.pdf",
+    "Esami/2022-07-07 - soluzione.pdf",
+    "Metodi di risoluzione degli esercizi/Constraints Satisfaction Problem.md",
+    "Esami/2016-01-14 - soluzione.pdf",
+    "Esami/2016-01-28 - soluzione.pdf",
+    "Esami/2017-01-12 - soluzione.pdf",
+    "Metodi di risoluzione degli esercizi/Algoritmo Min-Max e tagli Alfa-Beta.md",
+    "Metodi di risoluzione degli esercizi/Ricerca A-star e Greedy-Best-First.md",
+    "Metodi di risoluzione degli esercizi/Principio di Risoluzione logica del primo ordine.md",
+    "Prolog/README.md",
+    "Teoria/README.md",
+    "Teoria/_uniform-cost-search-algorithm.png",
+    "Teoria/1-sussman.png",
+    "Teoria/2-sussman.png",
+    "Teoria/3-sussman.png",
+    "Teoria/iterative-deepeningdepth-first-search.png",
+    "Teoria/Hill-climbing1.png",
+    "Teoria/depth-limited-search-algorithm.png",
+    "Teoria/depth-first-search.png",
+    "Teoria/breadth-first-search.png",
+    "README.md"
+  ]
+}
