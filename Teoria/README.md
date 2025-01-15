@@ -189,8 +189,7 @@ Questo tipo di algoritmo non gestisce un albero di ricerca, ma tiene traccia sol
 
 <img style="float: right;" src="./Hill-climbing1.png" width=400px />
 
-- **Massimi locali**: stati migliori di tutti i vicini, ma peggiori di altri stati che non sono nelle vicinanze. Il metodo ci spinge verso il
-massimo locale di bassa qualità e non uscirne mai.
+- **Massimi locali**: stati migliori di tutti i vicini, ma peggiori di altri stati che non sono nelle vicinanze. Il metodo ci spinge verso il massimo locale di bassa qualità e non uscirne mai.
 - **Altopiani**: zone molto piatte nelle quali gli stati vicini hanno tutti lo stesso valore e non è immediato decidere verso quale stato muoversi.
 - **Crinali**: stati con un valore maggiore, ai quali non è possibile arrivare direttamente.
 
@@ -212,7 +211,7 @@ Un’euristica $h(n)$ è ammissibile se, essendo $d(n)$ la vera distanza di un n
 
 $h(n) \leq d(n) \hskip{1cm} \forall n \in V$
 
-ovvero l’euristica è ottimistica. Se la ricerca $A^\star$ utilizza un’euristica ammissibile allora è garantito che restituirà la soluzione ottimale.
+ovvero l’euristica è ottimistica. Se la ricerca $A^\star$ utilizza un’euristica ammissibile allora è garantito che restituirà la soluzione ottimale (a patto che possa espandere nodi già visitati in passato).
 
 
 ### 3.6. Descrivere la ricerca A* e definire sotto quali condizioni tale algoritmo di ricerca trova la soluzione ottima. Perché sono importanti le euristiche ammissibili? E quelle monotone? (#8) 
@@ -384,7 +383,8 @@ function REVISE(csp, Xi, Xj) returns true if we revise the domain of Xi
 
 Una teoria assiomatica è definita dai suoi assiomi, formule ben formate (fbf) ritenute vere, e dai suoi criteri di manipolazione sintattica, ovvero le regole usate per derivare fbf da altre fbf. Lo scopo di una teoria assiomatica è _dimostrare la verità_ dei _teoremi_.
 
-Una teoria assiomatica si dice **corretta** se i teoremi dimostrati seguono logicamente dagli assiomi della teoria. Si dice inoltre che una teoria è **completa** se tutte le fbf che ne seguono logicamente possono essere dimostrati come teoremi della teoria.
+Una teoria assiomatica si dice **corretta** se i teoremi dimostrati seguono logicamente dagli assiomi della teoria. La correttezza garantisce che il sistema non permetta di derivare affermazioni false rispetto alla logica sottostante. Se un sistema non è corretto, significa che contiene errori nelle sue regole o negli assiomi.
+Si dice inoltre che una teoria è **completa** se tutte le fbf vere rispetto all'interpretazione semantica del sistema possono essere dimostrati come teoremi della teoria. La completezza garantisce che il sistema sia sufficientemente potente per catturare tutta la verità della logica che rappresenta. Se un sistema non è completo, esistono affermazioni vere che non possono essere dimostrate.
 
 
 ### 5.2. Si descriva brevemente in cosa consiste la derivazione SLDNF nella programmazione logica. (#14)
@@ -393,14 +393,12 @@ Per risolvere goal generali che possono contenere letterali negativi si introduc
 
 La selezione di letterali negativi solamente "ground" (ovvero che non contengono variabili) è necessaria per garantire _correttezza_ e _completezza_ della risoluzione SLDNF.
 
-La risoluzione SLDNF è alla base della realizzazione della negazione per fallimento nei sistemi Prolog. Per dimostrare $\tilde A$, dove $A$ è un atomo, l'interprete del linguaggio cerca di costruire una dimostrazione per $A$. Se la dimostrazione ha successo, allora la dimostrazione di $\tilde A$ fallisce, mentre se la dimostrazione per $A$ fallisce finitamente $\tilde A$ si considera dimostrato con successo.
+La risoluzione SLDNF è alla base della realizzazione della negazione per fallimento nei sistemi Prolog. Per dimostrare $not \space A$, dove $A$ è un atomo, l'interprete del linguaggio cerca di costruire una dimostrazione per $A$. Se la dimostrazione ha successo, allora la dimostrazione di $not \space A$ fallisce, mentre se la dimostrazione per $A$ fallisce finitamente $not \space A$ si considera dimostrato con successo.
 
 ### 5.3. Si enuncino a parole e in modo formale le proprietà di correttezza e completezza per un sistema logico. (#15)
 
 Un sistema logico si dice **corretto** quando non si possono dimostrare fatti falsi.
-
 Un sistema logico si dice **completo** quando tutti i fatti veri sono dimostrabili.
-
 Se T è _corretta_ e _completa_ è garantita l’equivalenza tra l'aspetto sintattico e semantico.
 
 ---
@@ -411,16 +409,16 @@ Se T è _corretta_ e _completa_ è garantita l’equivalenza tra l'aspetto sinta
 
 Le differenze possono essere riassunte nella seguente tabella.
 
-| Forward Chaining  | Backward Chaining |
-|---|---|
-| Parte dai dati e prende una decisione, arrivando al goal | Parte dal goal e lavora a ritroso per determinare quali fatti possono essere verificati, in modo da ottenere il goal da cui si è partiti. |
-| Tecnica data-driven, poiché raggiunge il goal a partire dai dati a disposizione  | Tecnica Goal-driven: parte dal goal e raggiunge lo stato iniziale in modo da estrarre i fatti  | 
-| Approccio bottom-up  | Approccio top-down   | 
-| Applica la strategia Breadth-First | Applica la strategia Depth-First |
-| Il suo obiettivo è arrivare alla conclusione | Il suo obiettivo è di ottenere i possibili fatti o i dati richiesti|
-| Lento, utilizza tutte le regole a sua disposizione | Veloce, utilizza poche regole |
-| Opera dallo stato iniziale alla decisione finale | Opera dal goal per raggiungere lo stato iniziale |
-| Utilizzato per il planning, monitoraggio, controllo e applicazioni di interpretazione | Utilizzato nei motori di inferenza automatizzati, per dimostrazione di teoremi e numerose altre applicazioni in ambito AI |
+| Forward Chaining                                                                      | Backward Chaining                                                                                                                         |
+| ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Parte dai dati e prende una decisione, arrivando al goal                              | Parte dal goal e lavora a ritroso per determinare quali fatti possono essere verificati, in modo da ottenere il goal da cui si è partiti. |
+| Tecnica data-driven, poiché raggiunge il goal a partire dai dati a disposizione       | Tecnica Goal-driven: parte dal goal e raggiunge lo stato iniziale in modo da estrarre i fatti                                             |
+| Approccio bottom-up                                                                   | Approccio top-down                                                                                                                        |
+| Applica la strategia Breadth-First                                                    | Applica la strategia Depth-First                                                                                                          |
+| Il suo obiettivo è arrivare alla conclusione                                          | Il suo obiettivo è di ottenere i possibili fatti o i dati richiesti                                                                       |
+| Lento, utilizza tutte le regole a sua disposizione                                    | Veloce, utilizza poche regole                                                                                                             |
+| Opera dallo stato iniziale alla decisione finale                                      | Opera dal goal per raggiungere lo stato iniziale                                                                                          |
+| Utilizzato per il planning, monitoraggio, controllo e applicazioni di interpretazione | Utilizzato nei motori di inferenza automatizzati, per dimostrazione di teoremi e numerose altre applicazioni in ambito AI                 |
 
 
 --- 
@@ -748,7 +746,7 @@ e data la query
 ?- amici(X,Y).
 ```
 
-Abbiamo che `X` viene istanziato ad `Alice` e `Y` viene istanziato a `B` se la query ha successo. A questo scopo diciamo che `amici(X,Y)` esegue unificazione con il termine `amici(Alice, Bob)`.
+Abbiamo che `X` viene istanziato ad `Alice` e `Y` viene istanziato a `Bob` se la query ha successo. A questo scopo diciamo che `amici(X,Y)` esegue unificazione con il termine `amici(Alice, Bob)`.
 
 
 **Occur check**:  L'occur check causa il fallimento dell'unificazione della variabile `V` e con la struttura `S`, se `S` contiene `V`.

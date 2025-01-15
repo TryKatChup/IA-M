@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Metodi di risoluzione degli esercizi/Constraints Satisfaction Problem.md",
+                "file": "Metodi di risoluzione degli esercizi/Ricerca A-star e Greedy-Best-First.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Constraints Satisfaction Problem"
+              "title": "Ricerca A-star e Greedy-Best-First"
             }
           }
         ],
@@ -42,18 +42,6 @@
         "id": "37f451cefe095495",
         "type": "tabs",
         "children": [
-          {
-            "id": "094458b80e25052e",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Prolog/README.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "README"
-            }
-          },
           {
             "id": "fdb87169bb61cb42",
             "type": "leaf",
@@ -66,8 +54,7 @@
               "title": "2022-09-09 - soluzione"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -139,7 +126,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Teoria/RiassuntiAI.pdf",
+                "file": "Teoria/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -149,7 +136,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for RiassuntiAI"
+              "title": "Backlinks for README"
             }
           },
           {
@@ -211,22 +198,24 @@
   "active": "a06e70c8bef8c470",
   "lastOpenFiles": [
     "Esami/2022-09-09 - soluzione.pdf",
-    "Esami/2021-07-09 - soluzione.pdf",
-    "Esami/2021-09-07 - soluzione.pdf",
-    "Esami/2022-01-11 - soluzione.pdf",
-    "Esami/2022-01-27 - soluzione.pdf",
-    "Esami/2022-02-17 - soluzione.pdf",
-    "Esami/2022-06-16 - soluzione.pdf",
-    "Esami/2022-07-07 - soluzione.pdf",
-    "Metodi di risoluzione degli esercizi/Constraints Satisfaction Problem.md",
-    "Esami/2016-01-14 - soluzione.pdf",
-    "Esami/2016-01-28 - soluzione.pdf",
-    "Esami/2017-01-12 - soluzione.pdf",
-    "Metodi di risoluzione degli esercizi/Algoritmo Min-Max e tagli Alfa-Beta.md",
     "Metodi di risoluzione degli esercizi/Ricerca A-star e Greedy-Best-First.md",
-    "Metodi di risoluzione degli esercizi/Principio di Risoluzione logica del primo ordine.md",
-    "Prolog/README.md",
+    "Esami/2022-07-07 - soluzione.pdf",
+    "Esami/2022-06-16 - soluzione.pdf",
+    "Esami/2022-02-17 - soluzione.pdf",
+    "Esami/2022-01-27 - soluzione.pdf",
+    "Esami/2022-01-11 - soluzione.pdf",
+    "Esami/2021-09-07 - soluzione.pdf",
+    "Esami/2021-07-09 - soluzione.pdf",
+    "Esami/2021-06-10 - soluzione.pdf",
+    "Esami/2021-02-11 - soluzione.pdf",
     "Teoria/README.md",
+    "Metodi di risoluzione degli esercizi/Constraint Graph per CSP.md",
+    "Metodi di risoluzione degli esercizi/Constraints Satisfaction Problem.md",
+    "Metodi di risoluzione degli esercizi/Principio di Risoluzione logica del primo ordine.md",
+    "Metodi di risoluzione degli esercizi/Prolog - Disegna l'albero SLD.md",
+    "Metodi di risoluzione degli esercizi/Algoritmo Min-Max e tagli Alfa-Beta.md",
+    "Metodi di risoluzione degli esercizi/Prolog - Scrivi un predicato.md",
+    "Prolog/README.md",
     "Teoria/_uniform-cost-search-algorithm.png",
     "Teoria/1-sussman.png",
     "Teoria/2-sussman.png",

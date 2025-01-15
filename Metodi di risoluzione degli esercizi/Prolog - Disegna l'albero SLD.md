@@ -1,0 +1,3 @@
+- Si parte dal goal
+- Si segnano le trasformazioni, per le variabili nel goal conviene mettere un pedice e seguono una logica del tipo: $m([X|T]) :- \space blablabla \space \rightarrow \space X/4, \space N_0/[4|T_0]$ (ovvero se X è sostituito a 4 e nel goal compare la variabile N dove nella regola compare [X|T] segno $N_0/[4|T_0]$ dove $T_0$ è un nome deciso da me)
+- Il Cut rimuove qualsiasi altro ramo allo stesso livello e impone che la scelta di variabili per quel ramo sia definitiva.
