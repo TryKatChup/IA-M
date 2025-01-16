@@ -9,7 +9,9 @@ Si procede ad analizzare l'albero con una ricerca Depth-First, i valori di alpha
 	- Beta = +inf
 	- V = -inf nei nodi di Max, +inf nei nodi di Min
 
+
 Ad ogni intersezione faccio i seguenti passi a seconda che sia un nodo di Min o Max
+
 MIN:
 1) Aggiorno V se il valore nel figlio è MINORE del valore attuale
 2) Check for pruning: Se il nuovo V <= Alpha allora faccio prune degli altri rami figli...

@@ -112,8 +112,7 @@ La BFS è ottimale solo se il costo di ogni nodo coincide con la profondità: ne
 
 La ricerca iterative deepening consiste nell'eseguire ripetutamente una ricerca in profondità con valori di profondità $l$ che incrementano progressivamente, finché non viene trovata una soluzione. Con $d$ profondità della soluzione a costo minimo, e $m$ profondità massima dello spazio degli stati, la complessità spaziale è $O(bd)$ in presenza di una soluzione o $O(bm)$ in uno spazio degli stati finito senza soluzione. 
 
-La ricerca iterative deepening è ottimale per problemi nei quali tutte le azioni hanno lo stesso costo ed è completa in tutti gli spazi degli stati finiti e aciclici, o nei quali il controllo dei cicli coinvolge l’intero cammino. La complessità temporale è $O(b^d)$ in presenza di una soluzone e $O(b^m)$ in sua assenza. Ogni iterazione genera un nuovo livello ma, a differenza della ricerca in ampiezza, i livelli precedenti
-vengono ricalcolati, risparmiando memoria al costo di maggiore tempo. La ricerca in ampiezza può sembrare molto dispendiosa, poiché diversi stati vengono espansi più volte, ma questo non peggiora sensibilmente i tempi di esecuzione.
+La ricerca iterative deepening è ottimale per problemi nei quali tutte le azioni hanno lo stesso costo ed è completa in tutti gli spazi degli stati finiti e aciclici, o nei quali il controllo dei cicli coinvolge l’intero cammino. La complessità temporale è $O(b^d)$ in presenza di una soluzone e $O(b^m)$ in sua assenza. Ogni iterazione genera un nuovo livello ma, a differenza della ricerca in ampiezza, i livelli precedenti vengono ricalcolati, risparmiando memoria al costo di maggiore tempo. La ricerca in ampiezza può sembrare molto dispendiosa, poiché diversi stati vengono espansi più volte, ma questo non peggiora sensibilmente i tempi di esecuzione.
 
 La ricerca iterative deepening è da preferire quando lo spazio degli stati è troppo vasto per essere memorizzato e la profondità della soluzione non è nota. 
 
@@ -144,8 +143,8 @@ function DEPTH-LIMITED-SEARCH(problem, l) returns a solution, or failure, or cut
 
 ### 3.3. Si introduca brevemente il metodo di ricerca a costo uniforme sottolineandone le caratteristiche. Se ne descriva poi sinteticamente l’algoritmo in pseudocodice. (#5)
 
-L’algoritmo di ricerca a costo uniforme svolge una ricerca in ampiezza, nella quale i nodi sono inseriti in una coda di priorità, ordinata in modo tale che venga
-sempre estratto per primo il nodo con la **distanza minore dal nodo di partenza**.
+L’algoritmo di ricerca a costo uniforme svolge una ricerca nella quale i nodi sono inseriti in una coda di priorità, ordinata in modo tale che venga sempre estratto per primo il nodo con la **distanza minore dal nodo di partenza**.
+Nei grafi in cui tutti gli archi hanno lo stesso costo l'algoritmo si comporta esattamente come un breadth first.
 La ricerca a costo uniforme è completa e ottimale, perché la prima volta che verrà espanso il nodo di arrivo la sua distanza dal nodo di partenza sarà minore o uguale a quella di qualunque altro nodo in coda. La complessità temporale e spaziale della ricerca a costo uniforme è $O(b^{1+C/\epsilon})$
 
 dove:
@@ -243,8 +242,6 @@ Per la valutazione di una euristica $h(n)$, si considerano:
   - $h(n')$ il costo per raggiungere il goal da $n'$
   
 Se $h(n)$ e’ consistente, $A^\star$ usando Graph-Search e’ ottimale.
-
-Se l'euristica è sia **consistente** che **ammissibile**, allora $A^\star$ è sia completa che ottimale.
 
 **NB**: Ogni euristica consistente è ammissibile, ma non è vero il viceversa.
 
