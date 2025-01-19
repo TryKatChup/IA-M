@@ -248,7 +248,7 @@ Se $h(n)$ e’ consistente, $A^\star$ usando Graph-Search e’ ottimale.
 ---
 ## 4. CSP (Constraint Satisfaction Problem)
 
-### 4.1. Si descrivano le strategie CSP di Generate & Test (GT) e di Standard	Backtracking (SB), discutendone	analogie e differenze. (#9)
+### 4.1. Si descrivano le strategie CSP di Generate & Test (GT) e di Standard Backtracking (SB), discutendone	analogie e differenze. (#9)
 
 Le strategie CSP (Constraint Satisfaction Problem) possono essere suddivise in base alla propagazione effettuata in ciascun nodo. Sia GT che SB sono algoritmi senza propagazione.
 
@@ -417,6 +417,14 @@ Le differenze possono essere riassunte nella seguente tabella.
 | Opera dallo stato iniziale alla decisione finale                                      | Opera dal goal per raggiungere lo stato iniziale                                                                                          |
 | Utilizzato per il planning, monitoraggio, controllo e applicazioni di interpretazione | Utilizzato nei motori di inferenza automatizzati, per dimostrazione di teoremi e numerose altre applicazioni in ambito AI                 |
 
+- **Backward Chaining** è preferibile quando:
+    - Si ha un obiettivo specifico da verificare.
+    - Si desidera ridurre lo spazio di ricerca evitando di considerare regole e fatti non necessari.
+    - È importante ottimizzare l'efficienza, ad esempio nei sistemi di diagnostica (come nei sistemi esperti medici).
+- **Forward Chaining** è preferibile quando:
+    - Si vogliono derivare tutte le possibili conclusioni da un insieme di fatti iniziali.
+    - È necessario aggiornare il sistema man mano che nuovi fatti diventano disponibili (ad esempio, nei sistemi di monitoraggio in tempo reale).
+    - L'obiettivo non è noto a priori e si cerca di esplorare tutte le implicazioni logiche.
 
 --- 
 ## 7. Prolog
