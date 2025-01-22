@@ -9,5 +9,5 @@ Come si garantisce l'Ottimalità?
      H(padre) <= H(figlio) + Distanza(Padre-Figlio)
 2) Se l'euristica è Ammissibile ovvero se per ogni nodo H(nodo) <= del costo reale seguendo il percorso migliore (vale solo se posso espandere nodi già visitati, sempre vero negli esercizi a meno che non venga esplicitamente detto)
 
-
+NB: se l'esercizio parla di non avere memoria potrebbe espandere anche stati già visitati con un costo di percorso maggiore di quello usato in passato. TBH non sono troppo sicuro che questo sia vero e ci metterei un enorme asterisco.
 

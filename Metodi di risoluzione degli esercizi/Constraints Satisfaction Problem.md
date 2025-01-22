@@ -7,3 +7,7 @@ Scelta della variabile su cui fare il labelling:
 - **Minimum Remaining Value (o First Fail)**: assegno la variabile con il numero di valori rimanenti più piccolo.
 - **Most Constrained Principle**: assegno prima la variabile con il maggior numero di constraints
 
+
+NB: PLA controlla le regole di FC e poi guarda solo le regole di ogni variabile che hanno come corpo dati relativi a variabili successive (C=2B viene ignorata mentre C > D viene eseguita se consideriamo l'ordine alfabetico come ordine di assegnamento)
+
+NB: Forzare un backtracking vuol dire tornare all'ultimo punto di scelta e provare una soluzione diversa da quella scelta precedentemente.

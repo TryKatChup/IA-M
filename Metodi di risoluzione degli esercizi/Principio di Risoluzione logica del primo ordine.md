@@ -21,3 +21,5 @@
 3) Risoluzione: si cerca di arrivare ad una clausola vuota per dimostrare una contraddizione usando la richiesta negata
 
 NB: ogni frase dopo la conversione fa sempre riferimento ad un $\forall$ anche se poi viene eliminato, se questo non fosse vero? Ci pensa Skolem.
+
+NB: le variabili devono coincidere (magari dopo opportune sostituzioni)

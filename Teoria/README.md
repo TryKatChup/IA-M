@@ -721,25 +721,26 @@ Il meta-interprete per Prolog puro è definito nel seguente modo:
 ```prolog
 solveVan(true) :- !.
 solveVan((A, B)) :- !, solveVan(A), solveVan(B).
-solveVan(A) :- clause(A, B), solveVan(B).
+solveVan(A) :- clause(A, Body), solveVan(Body).    % cerca una calusola che abbia A come testa e Body come corpo, poi prova di risolvere Body
 ```
 
 Una modalità per implementare un meta-interprete che dimostri l'OR dei sub-goal è la seguente:
 
 ```prolog
 solveVan(true) :- !.
-solveVan((A, _)) :- !, solveVan(A).
+solveVan((A, _)) :- solveVan(A), !.
 solveVan((_, B)) :- !, solveVan(B).
-solveVan(A) :- clause(A, B), solveVan(B).
+solveVan(A) :- clause(A, Body), solveVan(Body).
 ```
 In particolare:
 - la seconda riga risolve `A`;
 - la terza riga risolve `B`.
+Se una delle due ritorna true 
 
 ### 7.11. Si descriva sinteticamente l’unificazione, dove è utilizzata in Prolog, cos’è l’occur-check e cosa implichi il suo non utilizzo in Prolog. (#27)
 
 **Unificazione**: procedimento di manipolazione formale utilizzato per stabilire quando due espressioni possono coincidere procedendo a opportune sostituzioni.
-L'unificazione (combinata con le varie notazioni per le liste) è un potente meccanismo per l'accesso alle liste.
+È alla base del sistema di inferenza per la programmazione logica e consente di stabilire se due espressioni (come termini, clausole o predicati) possono essere resi equivalenti.
 
 Con il seguente predicato
 ```
@@ -752,7 +753,6 @@ e data la query
 ```
 
 Abbiamo che `X` viene istanziato ad `Alice` e `Y` viene istanziato a `Bob` se la query ha successo. A questo scopo diciamo che `amici(X,Y)` esegue unificazione con il termine `amici(Alice, Bob)`.
-
 
 **Occur check**:  L'occur check causa il fallimento dell'unificazione della variabile `V` e con la struttura `S`, se `S` contiene `V`.
 
