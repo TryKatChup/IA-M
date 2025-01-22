@@ -91,7 +91,8 @@
               "title": "_Riassunto_"
             }
           }
-        ]
+        ],
+        "currentTab": 5
       },
       {
         "id": "37f451cefe095495",
@@ -115,10 +116,10 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Esami/2023-06-15 - soluzione.pdf"
+                "file": "Esami/2023-02-01 - soluzione.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "2023-06-15 - soluzione"
+              "title": "2023-02-01 - soluzione"
             }
           }
         ],
@@ -263,28 +264,28 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6e150a99f3086421",
+  "active": "69b3ec3128d6bd93",
   "lastOpenFiles": [
-    "Teoria/README.md",
+    "Metodi di risoluzione degli esercizi/Principio di Risoluzione logica del primo ordine.md",
     "Metodi di risoluzione degli esercizi/_Riassunto_.md",
+    "Metodi di risoluzione degli esercizi/Prolog - Scrivi un predicato.md",
+    "Esami/2023-02-01 - soluzione.pdf",
+    "Prolog/README.md",
+    "Esami/2023-01-12 - soluzione.pdf",
+    "Esami/2023-02-16 - soluzione.pdf",
     "Esami/2023-06-15 - soluzione.pdf",
+    "Teoria/README.md",
     "Esami/2023-07-06 - soluzione.pdf",
     "Esami/2023-07-25 - soluzione.pdf",
     "Esami/2023-09-07 - soluzione.pdf",
     "Esami/2024-01-11 - soluzione.pdf",
     "Esami/2024-01-25 - soluzione.pdf",
     "Esami/2024-02-13 - soluzione.pdf",
-    "Esami/2024-06-13 - soluzione.pdf",
-    "Esami/2024-06-21 - soluzione.pdf",
     "Metodi di risoluzione degli esercizi/Constraint Graph per CSP.md",
     "Metodi di risoluzione degli esercizi/Constraints Satisfaction Problem.md",
-    "Metodi di risoluzione degli esercizi/Prolog - Scrivi un predicato.md",
     "Metodi di risoluzione degli esercizi/Ricerca A-star e Greedy-Best-First.md",
-    "Esami/2022-01-11 - soluzione.pdf",
-    "Metodi di risoluzione degli esercizi/Principio di Risoluzione logica del primo ordine.md",
     "Metodi di risoluzione degli esercizi/Algoritmo Min-Max e tagli Alfa-Beta.md",
     "Metodi di risoluzione degli esercizi/Prolog - Disegna l'albero SLD.md",
-    "Prolog/README.md",
     "Teoria/_uniform-cost-search-algorithm.png",
     "Teoria/1-sussman.png",
     "Teoria/2-sussman.png",
